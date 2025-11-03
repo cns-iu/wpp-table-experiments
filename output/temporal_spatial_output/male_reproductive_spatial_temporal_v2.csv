@@ -1,35 +1,8 @@
-﻿Time Range,Major Organs,AS,FTU,CT,B,Unknown
-1day - < 1week,testis,,,,,maturation of spermatozoa@nan; spermatogenesis@sertoli cell GENERATES spermatozoa; spermatozoa storage@seminal vesicle STORES spermatozoa
-1hr - < 1day,adipose tissue,peripheral aromatization@nan,,,,
-1hr - < 1day,adrenal gland,,,,,androstenedione production@zona reticularis SECRETES androstenedione
-1hr - < 1day,skeletal muscle,,,,,peripheral aromatization@nan
-1hr - < 1day,skin,peripheral aromatization@nan,,,,
-1hr - < 1day,testis,,,,,anti-müllerian hormone production@sertoli cell SECRETES anti-mullerian hormone; inhibin B production@sertoli cell SECRETES inhibin b; seminal plasma generation@seminal vesicle SECRETES seminal plasma; testosterone production@nan
-1min - < 1hr,hypothalamus,gonadotropin hormone releasing hormone production@nan; gonadotropin hormone releasing hormone production@parvicellular neuron SECRETES gnrh,,,,
-1min - < 1hr,pituitary gland,,,,,luteinizing hormone production@anterior pituitary SECRETES luteinizing hormone
-1min - < 1hr,prostate,dht secretion@prostate SECRETES dht,,,,
-1min - < 1hr,testis,,,,,spermatozoa transport@spermatozoa MOVE FROM epididymis TO vas deferens AND FROM vas deferens TO seminal vesicle; testosterone production@leydig cell SECRETES testosterone
-1s - < 1min,bulbospongiosus,,,,,bulbospongiosus contraction@nan
-1s - < 1min,cavernosal artery,corpus cavernosum filling@cavernosal artery SUPPLIES corpus cavernosum,,,,
-1s - < 1min,corpus cavernosum,,,,,corpus cavernosa relaxation@nan
-1s - < 1min,corpus spongiosum,,,,,corpus spongiosum dilation@nan
-1s - < 1min,deep dorsal vein,corpus cavernosum draining@deep dorsal vein DRAINS corpus cavernosum,,,,
-1s - < 1min,ejactulatory duct smooth muscle,,,,,ejaculatory duct contraction@nan
-1s - < 1min,epididymis smooth muscle,,,,,contraction of ejaculatory apparatus@nan
-1s - < 1min,hypogastric nerve,sympathetic innervation@hypogastric nerve INNERVATES ejaculatory duct smooth muscle,,,,
-1s - < 1min,hypothalamus,gonadotropin hormone releasing hormone release@nan; somatostatin production@parvocellular neuron SECRETES dopamine; somatostatin production@parvocellular neuron SECRETES somatostatin,,,,
-1s - < 1min,ischiocavernosus,ischiocavernosus contraction@nan,,,,
-1s - < 1min,motor pudendal nerve,somatic innervation@motor pudendal nerve INNERVATES striated bulbospongiosus,,,,
-1s - < 1min,pelvic plexus,parasympathetic innervation@nan; parasympathetic innervation@pelvic parasympathetic nerve INNERVATES corpus cavernosum,,,,
-1s - < 1min,penile urethra,,,,,emission of semen from penile urethra@semen MOVES FROM penile urethra TO urethral meatus
-1s - < 1min,perineal artery,corpus spongiosum filling@perineal artery SUPPLIES corpus spongiosum,,,,
-1s - < 1min,perineal vein,corpus spongiosum draining@perineal vein DRAINS corpus spongiosum,,,,
-1s - < 1min,pituitary gland,,,,,luteinizing hormone release@nan
-1s - < 1min,prostate,ejaculate fluid generation@bulbourethral gland SECRETES ejaculate fluid,,,,
-1s - < 1min,prostatic urethra,emission@seminal plasma MOVES FROM prostatic urethra TO penile urethra,,,,
-1s - < 1min,vas deferens smooth muscle,,,,,contraction of ejaculatory apparatus@nan
-<1 second,internal urinary sphincter of the bladder,,,,,constriction of urinary sphincter@nan
-<1 second,motor pudendal nerve,penile innervation@motor pudendal nerve INNERVATES striated bulbospongiosus; reflex efferent@motor pudendal nerve INNERVATES ischiocavernosus AND bulbospongiosus,,,,
-<1 second,sacral nerve,reflex afferent@sacral spinal nerve SENSES penile urethra,,,,
-<1 second,sensory pudendal nerve,sexual sensation@nan,,,,
-<1 second,thoracic sympathetic nerve,,,,,sympathetic innervation@thoracic sympathetic nerve INNERVATES internal urethral sphincter
+﻿Time Range,AS,FTU,CT,B,Unknown
+<1 second,penile innervation@motor pudendal nerve INNERVATES striated bulbospongiosus; reflex afferent@sacral spinal nerve SENSES penile urethra; reflex efferent@motor pudendal nerve INNERVATES ischiocavernosus AND bulbospongiosus; sexual sensation@nan,,,,constriction of urinary sphincter@nan; sympathetic innervation@thoracic sympathetic nerve INNERVATES internal urethral sphincter
+1s - < 1min,corpus cavernosum draining@deep dorsal vein DRAINS corpus cavernosum; corpus cavernosum filling@cavernosal artery SUPPLIES corpus cavernosum; corpus spongiosum draining@perineal vein DRAINS corpus spongiosum; corpus spongiosum filling@perineal artery SUPPLIES corpus spongiosum; ejaculate fluid generation@bulbourethral gland SECRETES ejaculate fluid; emission@seminal plasma MOVES FROM prostatic urethra TO penile urethra; gonadotropin hormone releasing hormone release@nan; ischiocavernosus contraction@nan; parasympathetic innervation@nan; parasympathetic innervation@pelvic parasympathetic nerve INNERVATES corpus cavernosum; somatic innervation@motor pudendal nerve INNERVATES striated bulbospongiosus; somatostatin production@parvocellular neuron SECRETES dopamine; somatostatin production@parvocellular neuron SECRETES somatostatin; sympathetic innervation@hypogastric nerve INNERVATES ejaculatory duct smooth muscle,,,,bulbospongiosus contraction@nan; contraction of ejaculatory apparatus@nan; corpus cavernosa relaxation@nan; corpus spongiosum dilation@nan; ejaculatory duct contraction@nan; emission of semen from penile urethra@semen MOVES FROM penile urethra TO urethral meatus; luteinizing hormone release@nan
+1min - < 1hr,dht secretion@prostate SECRETES dht; gonadotropin hormone releasing hormone production@nan; gonadotropin hormone releasing hormone production@parvicellular neuron SECRETES gnrh,,,,luteinizing hormone production@anterior pituitary SECRETES luteinizing hormone; spermatozoa transport@spermatozoa MOVE FROM epididymis TO vas deferens AND FROM vas deferens TO seminal vesicle; testosterone production@leydig cell SECRETES testosterone
+1hr - < 1day,peripheral aromatization@nan,,,,androstenedione production@zona reticularis SECRETES androstenedione; anti-müllerian hormone production@sertoli cell SECRETES anti-mullerian hormone; inhibin B production@sertoli cell SECRETES inhibin b; peripheral aromatization@nan; seminal plasma generation@seminal vesicle SECRETES seminal plasma; testosterone production@nan
+1day - < 1week,,,,,maturation of spermatozoa@nan; spermatogenesis@sertoli cell GENERATES spermatozoa; spermatozoa storage@seminal vesicle STORES spermatozoa
+1 week - < 1 year,,,,,
+1 year or longer,,,,,
