@@ -1,0 +1,26 @@
+EffectorLocation,EffectorID
+Airway,UBERON:0001005
+Airways,UBERON:0001005
+Bronchioles,UBERON:0002185
+Brunner's gland,UBERON:0001212
+Gallbladder,UBERON:0002110
+Intestine,UBERON:0000160
+Kidney,UBERON:0002113
+Liver,UBERON:0002107
+Lung,UBERON:0002048
+Mouth/Pancreas,UBERON:0001007
+Pancreas,UBERON:0001264
+Pancreas/ Small intestine,UBERON:0001007
+Small intestine,UBERON:0002108
+Stomach,UBERON:0000945
+Thoracic wall,UBERON:0016403
+digestive system,UBERON:0001007
+female reproductive system,UBERON:0000474
+kidney,UBERON:0002113
+lower urinary tract,UBERON:0001556
+male reproductive organ,UBERON:0003135
+ovary,UBERON:0000992
+pituitary gland,UBERON:0000007
+stomach,UBERON:0000945
+ureter,UBERON:0000056
+uterus,UBERON: 0000995

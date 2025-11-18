@@ -31,6 +31,18 @@ Run = code/3d_scatter_plot.py
 
 Output - output/3d_scatter_plots/
 
+### Analysis
+
+Output - ./output/analysis
+
+- output\analysis\Organs_in_WPP.csv (Organs present in WPP tables)
+
+- output\analysis\AS_UBERON_in_WPP.csv (ALL AS present in WPP tables)
+
+- output\analysis\AS_ids_missing_in_asctb.csv (AS missin in ASTCB but present in WPP tables)
+
+- output\analysis\AS_ids_present_in_asctb.csv (AS present in ASTCB and WPP tables)
+
 ### Challenges
 
 Cannot find IDs of majority lower structures in asctb tables hence matched with the ones as lower as possible in hierarchy. Refer this code at code/lowest_missing.py
