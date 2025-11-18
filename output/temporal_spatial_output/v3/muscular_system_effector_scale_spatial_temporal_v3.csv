@@ -1,0 +1,9 @@
+﻿Time Range,Organ,AS,FTU,CT,B,Unknown
+<1 second,,,,calcium efflux@nan; calcium influx@nan; frequency fusion@nan; innervation@nan; motor end plate depolarization@nan; muscle twitch@depolarization of the motor end plate triggers contraction of skeletal muscle via calcium influx; smooth muscle contraction@depolarization of the autonomic neuron triggers smooth muscle cell depolarization via influx of calcium; spatial fusion@nan,,
+1s - < 1min,,,knee extension@nan; knee flexion@nan,glut4 translocation@nan; response to caffeine@nan; response to catecholamines@nan; response to thyroid hormone@nan,,
+1min - < 1hr,,,,glut4 translocation@nan; glycogen synthesis@nan; glycogenolysis@nan; response to caffeine@nan; response to catecholamines@nan; response to thyroid hormone@nan,,
+1hr - < 1day,,,,glycogen synthesis@nan; glycogenolysis@nan; skeletal muscle hypertrophy@nan,,
+1day - < 1week,,,,skeletal muscle hypertrophy@nan,,
+1 week - < 1 year,,,,,,
+1 year or longer,,,,,,
+Unknown,,,,response to estrogen@nan; response to growth factors@nan; response to growth hormone@nan; response to insulin@nan; response to steroid hormones@nan; response to testosterone@nan; response to thyroid hormone@nan,,

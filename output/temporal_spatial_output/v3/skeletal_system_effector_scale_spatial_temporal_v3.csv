@@ -1,0 +1,9 @@
+﻿Time Range,Organ,AS,FTU,CT,B,Unknown
+<1 second,,,,,,
+1s - < 1min,,,,,,
+1min - < 1hr,,,RANK/RANKL signaling@nan; calcium homeostasis@nan; erythrocyte homeostasis@nan,"RANK/RANKL signaling@nan; antagonist of Wnt signaling; bone metabolism@nan; calcitonin production@calcitonin lowers serum calcium by inhibiting bone resorption; osteocalcin production@nan; osteocalcin production@osteocalcin is produced by osteoblasts and indicates increased bone turnover; parathyroid hormone release@PTH increases calcium and decreases phosphate by promoting reabsorption in the kidney, increasing bone resorption, increasing vitamin D activation, and increasing calcium uptake from the small intestine; parathyroid hormone release@nan; sclerostin production@nan; sclerostin production@sclerostin is secreted by osteocytes and inhibits osteoblasts",,
+1hr - < 1day,,,,parathyroid hormone release@nan,,
+1day - < 1week,,,,,,
+1 week - < 1 year,,,,,,
+1 year or longer,,,,,,
+Unknown,,,,,,
