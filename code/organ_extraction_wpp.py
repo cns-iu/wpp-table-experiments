@@ -71,11 +71,11 @@ import pandas as pd
 
 
 input_folder = "./data/WPP Tables"
-output_path = "./output/analysis/unique_effector_locations_with_ids.csv"
+output_path = "./output/analysis/unique_organs_with_ids.csv"
 
 # Candidate column name variants (case-insensitive matching)
 EFFECTOR_SCALE_COL_NAMES = ["effector scale", "Effector Scale", "effector_scale", "EffectorScale"]
-EFFECTOR_LOCATION_COL_NAMES = ["EffectorLocation", "effector location", "Effector Location", "effector_location"]
+EFFECTOR_LOCATION_COL_NAMES = ["EffectorLocation/LABEL", "EffectorLocation/LABEL"]
 EFFECTOR_ID_COL_NAMES = ["EffectorLocation/ID"]
 
 # ----------------------------------------
@@ -172,9 +172,9 @@ def collect_effector_locations_with_ids(input_folder, output_path):
     rows = []
     for loc, ids in sorted(loc_to_ids.items()):
         id_str = ";".join(sorted(ids)) if ids else ""
-        rows.append({"EffectorLocation": loc, "EffectorID": id_str})
+        rows.append({"Organ": loc, "Organ_ID": id_str})
 
-    out_df = pd.DataFrame(rows, columns=["EffectorLocation", "EffectorID"])
+    out_df = pd.DataFrame(rows, columns=["Organ", "Organ_ID"])
     os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
     out_df.to_csv(output_path, index=False)
 

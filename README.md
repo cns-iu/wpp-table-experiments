@@ -39,7 +39,7 @@ Unique AS IDs NOT present in ASTCB: 56
 
 Output - ./output/analysis
 
-- output\analysis\Organs_in_WPP.csv (Organs present in WPP tables)
+- output\analysis\Organs_with_ids_WPP.csv (Organs present in WPP tables)
 
 - output\analysis\AS_UBERON_in_WPP.csv (ALL AS present in WPP tables)
 
