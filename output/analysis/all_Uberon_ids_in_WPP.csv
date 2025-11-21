@@ -1,0 +1,291 @@
+AS,AS_ID
+adenohypophysis,UBERON:0002196
+adipose tissue,UBERON:0001013
+adrenal cortex,UBERON:0001235
+adrenal medulla,UBERON:0001236
+alveolus of lung,UBERON:0002299
+ampulla of fallopian tube,UBERON:0012648
+anterior tibial artery,UBERON:0001537
+anterior tibial vein,UBERON:0001545
+anterior vena cava,UBERON:0001585
+aorta,UBERON:0000947
+aortic body,UBERON:0034971
+arterial system,UBERON:0004572
+artery,UBERON:0001637
+atrioventricular node,UBERON:0002352
+autonomic nerve,UBERON:0034728
+autonomic nervous system,UBERON:0002410
+axillary vein,UBERON:0000985
+baroreceptor,UBERON:0004019
+basilic vein,UBERON:0001411
+biceps femoris,UBERON:0001374
+blastocyst,UBERON:0000358
+blastula,UBERON:0000307
+blood,UBERON:0000178
+blood plasma,UBERON:0001969
+blood vessel smooth muscle,UBERON:0004237
+bone marrow,UBERON:0002371
+bone tissue,UBERON:0002481
+brachial artery,UBERON:0001398
+brachial vein,UBERON:0001413
+brachiocephalic artery,UBERON:0001529
+brainstem,UBERON:0002298
+breast,UBERON:0000310
+bronchus,UBERON:0002185
+bulbo-urethral gland,UBERON:0002366
+bundle of His,UBERON:0002353
+capillary,UBERON:0001982
+cardiac atrium,UBERON:0002081
+cardiac muscle tissue of atrium,UBERON:0004490
+cardiac muscle tissue of interatrial septum,UBERON:0004491
+cardiac muscle tissue of interventricular septum,UBERON:0003383
+cardiac muscle tissue of ventricle,UBERON:0018649
+cardiac Purkinje fiber,UBERON:0002354
+cardiac right atrium,UBERON:0002078
+cardiac ventricle,UBERON:0002082
+celiac trunk,UBERON:0006637
+cephalic vein,UBERON:0001106
+cerebral artery,UBERON:0004449
+cerebral cortex,UBERON:0000956
+circulatory system,UBERON:0001009
+clitoris,UBERON:0002411
+colloid of thyroid follicle,UBERON:0012364
+Colon,UBERON:0001155
+common hepatic artery,UBERON:0005436
+common penile artery,UBERON:0008320
+corpus cavernosum clitoridis,UBERON:0006608
+corpus cavernosum penis,UBERON:0004713
+corpus luteum,UBERON:0002512
+corpus spongiosum of penis,UBERON:0011183
+cortex of kidney,UBERON:0001186
+cranial nerve,UBERON:0001785
+deep artery of penis,UBERON:0008321
+deep dorsal vein of clitoris,UBERON:0006690
+deep dorsal vein of penis,UBERON:0006656
+descending aorta,UBERON:0001514
+digestive system,UBERON:0001007
+digestive tract,UBERON:0001007
+distal convoluted tubule,UBERON:0001292
+distal tubule,UBERON:0004135
+dorsal artery of clitoris,UBERON:0008323
+dorsal vein of penis,UBERON:0039422
+duodenal gland,UBERON:0001212
+Duodenum,UBERON:0002114
+duodenum,UBERON:0002114
+ejaculatory duct,UBERON:0000999
+endocrine system,UBERON:0000949
+endometrium,UBERON:0001295
+epididymis,UBERON:0001301
+epididymis smooth muscle,UBERON:0004835
+epithalamus,UBERON:0001899
+external intercostal muscle,UBERON:0005441
+external jugular vein,UBERON:0001101
+fallopian tube,UBERON:0003889
+female reproductive system,UBERON:0000474;UBERON:0001134
+femoral artery,UBERON:0002060
+femoral vein,UBERON:0001361
+fimbriae of fallopian tube,UBERON:8410010
+fundus of stomach,UBERON:0001160
+gallbladder,UBERON:0002110
+gallbladder smooth muscle,UBERON:0004240
+gastroduodenal artery,UBERON:0010132
+heart,UBERON:0000948
+heart left ventricle,UBERON:0002084
+heart right ventricle,UBERON:0002080
+hepatic portal system,UBERON:0010194
+hepatic vein,UBERON:0001143
+hypogastric nerve,UBERON:0005303
+hypothalamus,UBERON:0001898
+ileocolic artery,UBERON:0001197
+ileocolic vein,UBERON:0001219
+ileum,UBERON:0002116
+iliac artery,UBERON:0005609
+iliac vein,UBERON:0005610
+inferior hypogastric nerve plexus,UBERON:0002014
+inferior mesenteric artery,UBERON:0001183
+inferior mesenteric vein,UBERON:0001215
+inferior vena cava,UBERON:0001072
+intercostal muscle,UBERON:0001111
+intercostal nerve,UBERON:0003727
+internal intercostal muscle,UBERON:0002403
+internal jugular vein,UBERON:0001586
+internal urethral sphincter,UBERON:0004918
+intestine,UBERON:0000160
+intra-acinar venule,UBERON:8600061
+intrahepatic branch of portal vein,UBERON:0016890
+ischiocavernosus muscle,UBERON:0001339
+islet of Langerhans,UBERON:0000006
+jejunum,UBERON:0002115
+juxtaglomerular apparatus,UBERON:0002303
+kidney,UBERON:0002113
+kidney arcuate vein,UBERON:0004719
+kidney arterial blood vessel,UBERON:0003644
+kidney collecting duct epithelium,UBERON:0014388
+kidney insterstitium,UBERON:0005215
+kidney vasculature,UBERON:0006544
+knee,UBERON:0001465
+left cardiac atrium,UBERON:0002079
+left colic artery,UBERON:8410022
+left colic vein,UBERON:8410017
+left common carotid artery plus branches,UBERON:0001536
+left gastric artery,UBERON:0001192
+left gastric vein,UBERON:0014690
+left gastroepiploic artery,UBERON:0035830
+left gastroepiploic vein,UBERON:8920047
+left hepatic artery,UBERON:0015481
+left renal artery,UBERON:0001186
+left renal vein,UBERON:0001142
+left subclavian artery,UBERON:0001584
+leg,UBERON:0000978
+liver,UBERON:0002107
+loop of Henle,UBERON:0001288
+Loop of Henle,UBERON:0001288
+lower urinary tract,UBERON:0001556
+lumbosacral nerve plexus,UBERON:0001815
+lung,UBERON:0002048
+lung connective tissue,UBERON:0000114
+lung elastic tissue,UBERON:0003615
+lung endothelium,UBERON:0013479
+lung parenchyma,UBERON:0008946
+lung vasculature,UBERON:0000102
+major vestibular gland,UBERON:0000460
+male bulbospongiosus muscle,UBERON:0011388
+male reproductive organ,UBERON:0003135
+male urethra,UBERON:0001333
+male urethral meatus,UBERON:0012241
+mammalian vulva,UBERON:0000997
+mammary gland,UBERON:0001911
+mammary gland connective tissue,UBERON:0003584
+mammary gland smooth muscle,UBERON:0004235
+median preoptic nucleus,UBERON:0002625
+middle colic artery,UBERON:0001196
+middle colic vein,UBERON:0001218
+morula,UBERON:0000085
+muscular coat of vas deferens,UBERON:0004224
+myometrium,UBERON:0001296
+nerve of clitoris,UBERON:0035650
+neurohypophysis,UBERON:0002198
+ovarian follicle,UBERON:0001305
+ovary,UBERON:0000992
+oviduct epithelium,UBERON:0004804
+pancreas,UBERON:0001264
+parasympathetic nerve,UBERON:0004293
+parasympathetic nervous system,UBERON:0000011
+parathyroid gland,UBERON:0001132
+paraventricular nucleus of hypothalamus,UBERON:0001930
+pelvis nerve,UBERON:0003444
+penis,UBERON:0000989
+perineal artery,UBERON:0001358
+perineal muscle,UBERON:0002379
+perineal vein,UBERON:0001362
+peritubular capillary,UBERON:0005272
+pineal body,UBERON:0001905
+pituitary gland,UBERON:0000007
+placenta,UBERON:0001987
+pons,UBERON:0000988
+popliteal artery,UBERON:0002250
+popliteal vein,UBERON:0001544
+portal vein,UBERON:0002017
+portal venous system,UBERON:0004582
+posterior tibial artery,UBERON:0001538
+posterior tibial vein,UBERON:0001546
+pre-Botzinger complex,UBERON:0006007
+proper hepatic artery,UBERON:0015480
+prostate gland,UBERON:0002367
+proximal convoluted tubule,UBERON:0001287
+proximal straight tubule,UBERON:0001290
+proximal tubule,UBERON:0004134
+pudendal nerve,UBERON:0011390
+pulmonary alveolus epithelium,UBERON:0004821
+pulmonary arteriole,UBERON:8600077
+pulmonary artery,UBERON:0002012
+pulmonary capillary,UBERON:0016405
+pulmonary vein,UBERON:0002016
+pulmonary venule,UBERON:8600024
+pylorus,UBERON:0001166
+radial artery,UBERON:0001404;UBERON:0001406
+rectus femoris,UBERON:0001378
+renal afferent arteriole,UBERON:0004639
+renal cortex tubule,UBERON:0006853
+renal efferent arteriole,UBERON:0004640
+renal glomerulus,UBERON:0000074
+renal glomerulus vasculature,UBERON:0004190
+renal interlobular vein,UBERON:0005168
+renal lymph node,UBERON:0003425
+renal tubule,UBERON:0009773
+respiratory airway,UBERON:0001005
+right colic artery,UBERON:8410023
+right colic vein,UBERON:8410018
+right common carotid artery plus branches,UBERON:0001531
+right gastric artery,UBERON:8920045
+right gastric vein,UBERON:0014691
+right gastroepiploic artery,UBERON:0035829
+right gastroepiploic vein,UBERON:8920048
+right hepatic artery,UBERON:0015482
+right lung respiratory bronchiole,UBERON:0003542
+right renal artery,UBERON:0001185
+right renal vein,UBERON:0001141
+right subclavian artery,UBERON:0001534
+sacral nerve plexus,UBERON:0034986
+sagittal sinus,UBERON:0015704
+sartorius muscle,UBERON:0001374
+semimembranosus muscle,UBERON:0001381
+seminal vesicle,UBERON:0000998
+seminiferous tubule of testis,UBERON:0001343
+semitendinosus,UBERON:0001375
+sigmoid artery,UBERON:0035180
+sigmoid vein,UBERON:0039228
+sinoatrial node,UBERON:0002351
+skeletal muscle tissue,UBERON:0001134
+skeletal system,UBERON:0001434
+skin of body,UBERON:0002097
+small intestine,UBERON:0002108
+Small intestine,UBERON:0002108
+smooth muscle tissue,UBERON:0001135
+smooth muscle tissue layer of ejaculatory duct,UBERON:0015717
+Somatic motor nervous system,UBERON:0003945
+spinal cord,UBERON:0002240
+splenic artery,UBERON:0001194
+splenic vein,UBERON:0003713
+stomach,UBERON:0000945
+subclavian vein,UBERON:0001587
+superficial palmar arch,UBERON:0006564
+superior mesenteric artery,UBERON:0001182
+superior mesenteric vein,UBERON:0001138
+suprachiasmatic nucleus,UBERON:0002034
+sympathetic nerve,UBERON:0034729
+sympathetic nerve trunk,UBERON:0004295
+Sympathetic nervous system,UBERON:0000013
+testis,UBERON:0000473
+thick ascending limb of loop of Henle,UBERON:0001291
+thoracic cavity,UBERON:0002224
+thoracic nerve,UBERON:0003726
+thoracic spinal cord,UBERON:0003038
+thoracic sympathetic nerve trunk,UBERON:0004863
+thoracic wall,UBERON:0016403
+thyroid follicle,UBERON:0005305
+thyroid gland,UBERON:0002046
+trachea,UBERON:0003126
+trophoblast,UBERON:0000088
+ulnar artery,UBERON:0001406
+upper lobe of lung,UBERON:0008948
+ureter,UBERON:0000056
+ureter smooth muscle,UBERON:0009919
+urethra,UBERON:0000057
+urinary bladder,UBERON:0001255
+uterine cervix,UBERON:0000002
+uterine spiral artery,UBERON:0015171
+vagus nerve,UBERON:0001759
+vas deferens,UBERON:0001000
+vascular system,UBERON:0007798
+vastus intermedius,UBERON:0014847
+vastus lateralis,UBERON:0001379
+vastus medialis,UBERON:0001380
+vein,UBERON:0001638
+venous system,UBERON:0004582
+ventral rhombencephalic commissure medulla oblongata,UBERON:2000985
+ventromedial hypothalamus,UBERON:0001935
+white adipose tissue,UBERON:0001347
+zona fasciculata of adrenal gland,UBERON:0002054
+zona glomerulosa of adrenal gland,UBERON:0002053
+zona reticularis of adrenal gland,UBERON:0002055
