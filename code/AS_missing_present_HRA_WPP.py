@@ -232,17 +232,17 @@ def main():
     missing_rows = [{"Missing_AS_ID": mid, "AS": ";".join(sorted(id_to_labels[mid]))} for mid in missing_ids]
     if missing_rows:
         pd.DataFrame(missing_rows).to_csv(output_missing_file, index=False)
-        print(f"✅ Saved {len(missing_rows)} missing IDs to: {output_missing_file}")
+        print(f"Saved {len(missing_rows)} missing IDs to: {output_missing_file}")
     else:
-        print("✅ No missing tissue IDs — all found in ASTCB.")
+        print("No missing tissue IDs — all found in ASTCB.")
 
     # ---- Save Present IDs ----
     present_rows = [{"Present_AS_ID": pid, "AS": ";".join(sorted(id_to_labels[pid]))} for pid in present_ids]
     if present_rows:
         pd.DataFrame(present_rows).to_csv(output_present_file, index=False)
-        print(f"✅ Saved {len(present_rows)} present IDs to: {output_present_file}")
+        print(f"Saved {len(present_rows)} present IDs to: {output_present_file}")
     else:
-        print("⚠️ No tissue IDs matched ASTCB entries.")
+        print("No tissue IDs matched ASTCB entries.")
 
     # ---- Summary ----
     print("\n=== Summary ===")
