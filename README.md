@@ -55,7 +55,7 @@ Total Uberon ids in WPP => 283
 WPP intersection HRA => 164
 Only in WPP => 119
 Total in HRA => 4955
-Only in HRA => 4672
+Only in HRA => 4791
 
 - output\analysis\all_Uberon_statistics\all_Uberon_ids_in_WPP.csv
 
