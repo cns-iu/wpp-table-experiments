@@ -178,7 +178,7 @@ def main():
         return
     tissue_df = pd.read_csv(tissue_output_file, dtype=str)
 
-    id_col = "EffectorID" if "EffectorID" in tissue_df.columns else next((c for c in tissue_df.columns if "id" in c.lower()), None)
+    id_col = "AS_ID" if "AS_ID" in tissue_df.columns else next((c for c in tissue_df.columns if "id" in c.lower()), None)
     if id_col is None:
         print("[ERROR] No ID column found in tissue file.")
         return
@@ -189,7 +189,7 @@ def main():
     total_id_occurrences = 0
 
     for _, row in tissue_df.iterrows():
-        label = row.get("EffectorLabel") or ""
+        label = row.get("AS") or ""
         ids = split_ids_field(row.get(id_col))
         for i in ids:
             total_id_occurrences += 1
@@ -229,7 +229,7 @@ def main():
     missing_ids = sorted(tissue_ids - astcb_ids)
 
     # ---- Save Missing IDs ----
-    missing_rows = [{"MissingID": mid, "WPP_ReferencingLabels": ";".join(sorted(id_to_labels[mid]))} for mid in missing_ids]
+    missing_rows = [{"Missing_AS_ID": mid, "AS": ";".join(sorted(id_to_labels[mid]))} for mid in missing_ids]
     if missing_rows:
         pd.DataFrame(missing_rows).to_csv(output_missing_file, index=False)
         print(f"✅ Saved {len(missing_rows)} missing IDs to: {output_missing_file}")
@@ -237,7 +237,7 @@ def main():
         print("✅ No missing tissue IDs — all found in ASTCB.")
 
     # ---- Save Present IDs ----
-    present_rows = [{"PresentID": pid, "WPP_ReferencingLabels": ";".join(sorted(id_to_labels[pid]))} for pid in present_ids]
+    present_rows = [{"Present_AS_ID": pid, "AS": ";".join(sorted(id_to_labels[pid]))} for pid in present_ids]
     if present_rows:
         pd.DataFrame(present_rows).to_csv(output_present_file, index=False)
         print(f"✅ Saved {len(present_rows)} present IDs to: {output_present_file}")
