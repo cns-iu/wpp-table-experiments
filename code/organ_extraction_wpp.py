@@ -73,7 +73,6 @@ import pandas as pd
 input_folder = "./data/WPP Tables"
 output_path = "./output/analysis/unique_organs_with_ids.csv"
 
-# Candidate column name variants (case-insensitive matching)
 EFFECTOR_SCALE_COL_NAMES = ["effector scale", "Effector Scale", "effector_scale", "EffectorScale"]
 EFFECTOR_LOCATION_COL_NAMES = ["EffectorLocation/LABEL", "EffectorLocation/LABEL"]
 EFFECTOR_ID_COL_NAMES = ["EffectorLocation/ID"]
@@ -118,13 +117,11 @@ def collect_effector_locations_with_ids(input_folder, output_path):
         fname = os.path.basename(file_path)
         fname_l = fname.lower()
 
-        # choose header dynamically
         header_row = 12 if "endocrine" in fname_l else 11
 
         try:
             df = pd.read_csv(file_path, dtype=str, header=header_row)
         except Exception as e:
-            # try a fallback encoding
             try:
                 df = pd.read_csv(file_path, dtype=str, header=header_row, encoding="utf-8-sig")
             except Exception:
@@ -146,7 +143,6 @@ def collect_effector_locations_with_ids(input_folder, output_path):
         if id_col is None:
             print(f"[INFO] File {fname} has no ID column (will still collect locations, ID column left blank).")
 
-        # filter rows where effector scale contains 'organ' (case-insensitive)
         mask = df[esc_col].astype(str).str.lower() == "organ"
         matched = df.loc[mask, [loc_col] + ([id_col] if id_col else [])]
 
@@ -168,7 +164,7 @@ def collect_effector_locations_with_ids(input_folder, output_path):
 
         per_file_counts[fname] = count
 
-    # Prepare DataFrame: EffectorLocation | EffectorID (semicolon-separated unique IDs)
+    # Prepare DataFrame
     rows = []
     for loc, ids in sorted(loc_to_ids.items()):
         id_str = ";".join(sorted(ids)) if ids else ""
@@ -189,8 +185,5 @@ def collect_effector_locations_with_ids(input_folder, output_path):
     print(f"Unique EffectorLocation values: {total_locations}")
     print(f"aved to: {output_path}")
 
-# ----------------------------------------
-# Run
-# ----------------------------------------
 if __name__ == "__main__":
     collect_effector_locations_with_ids(input_folder, output_path)

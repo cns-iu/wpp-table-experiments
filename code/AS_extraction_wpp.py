@@ -1,21 +1,16 @@
 #!/usr/bin/env python3
 """
-
 Extract unique tissue effectors from CSV files.
 
 - For rows where effector scale == "tissue" (exact, case-insensitive),
   collects Effector/LABEL (as EffectorLabel) and Effector/ID (as EffectorID).
 - Deduplicates labels and IDs across all files.
-- Uses header=12 for filenames containing "endocrine", otherwise header=11.
 """
 
 import os
 import glob
 import pandas as pd
 
-# -----------------------
-# USER CONFIG - edit these paths
-# -----------------------
 input_folder = "./data/WPP Tables/"
 output_tissue_file = "./output/analysis/AS_UBERON_in_WPP.csv"
 
@@ -123,8 +118,5 @@ def collect_tissue_only(input_folder, output_tissue_file):
     print(f"Total tissue-matched rows: {total_tissue_rows}")
     print(f"Unique tissue EffectorLabel values: {len(out_df)} -> saved to: {output_tissue_file}")
 
-# -----------------------
-# Run
-# -----------------------
 if __name__ == "__main__":
     collect_tissue_only(input_folder, output_tissue_file)

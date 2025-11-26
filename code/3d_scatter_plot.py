@@ -24,9 +24,7 @@ time_order = [
     "1day - < 1week", "1 week - < 1 year", "1 year or longer"
 ][::-1]
 
-# Choose a sequential colormap (change as desired)
 cmap_choice = "summer"   # e.g. "viridis", "inferno", "plasma", "magma", "cividis", "YlGnBu"
-# If you want log scaling of colors for wide ranges, set use_log_norm = True
 use_log_norm = False
 
 # --------------------------
@@ -69,18 +67,15 @@ if not combined_list:
 combined = pd.concat(combined_list, ignore_index=True)
 
 # --------------------------
-# Count processes on each spatial column
+# Count processes
 # --------------------------
 for col in ["Organ", "AS", "FTU", "CT", "B"]:
     if col in combined.columns:
         combined[col + "_count"] = combined[col].apply(process_count)
     else:
-        # If the column is missing, create a zero column to avoid errors downstream
+        # If the column is missing, create a zero column
         combined[col + "_count"] = 0
 
-# --------------------------
-# Flatten to long format
-# --------------------------
 long_df = combined.melt(
     id_vars=["Time Range", "Organ System"],
     value_vars=["Organ_count", "AS_count", "FTU_count", "CT_count", "B_count"],
@@ -92,9 +87,8 @@ long_df["Spatial Scale"] = long_df["Spatial Scale"].str.replace("_count", "")
 long_df = long_df[long_df["Count"] > 0].copy()
 
 # --------------------------
-# Build z-axis categories (organ systems) from filenames (preserve order if you like)
+# Build z-axis categories 
 # --------------------------
-# We'll use the order of first appearance in 'files' for z-order:
 organ_system_order = []
 seen = set()
 for f in files:
@@ -103,7 +97,6 @@ for f in files:
         seen.add(lab)
         organ_system_order.append(lab)
 
-# Fallback: if something odd happened, use unique sorted
 if not organ_system_order:
     organ_system_order = sorted(long_df["Organ System"].unique())
 
@@ -117,19 +110,16 @@ long_df["y"] = long_df["Time Range"].astype("category").cat.set_categories(time_
 # Remove rows that got -1 codes because their category wasn't present in the category map
 long_df = long_df[(long_df["x"] >= 0) & (long_df["y"] >= 0) & (long_df["z"] >= 0)].copy()
 
-# --------------------------
-# Plot combined 3D scatter
-# --------------------------
+
 fig = plt.figure(figsize=(24, 16))
 ax = fig.add_subplot(111, projection="3d")
 
 xs = long_df["x"].values
 ys = long_df["y"].values
 zs = long_df["z"].values
-sizes = (long_df["Count"].values.astype(float) ** 0.9) * 30  # gentle transform so large counts don't explode
+sizes = (long_df["Count"].values.astype(float) ** 0.9) * 30  
 colors = long_df["Count"].values
 
-# Optional: Log normalization (helps when counts span orders of magnitude)
 norm = None
 if use_log_norm and colors.min() > 0:
     norm = mcolors.LogNorm(vmin=colors.min(), vmax=colors.max())
@@ -137,7 +127,7 @@ if use_log_norm and colors.min() > 0:
 # Clip the color range slightly above min to make small counts visible
 vmin = max(1, colors.min())  # avoid 0
 vmax = colors.max()
-vmin_adjusted = vmin + (vmax - vmin) * 0.01  # start 5% into the colormap
+vmin_adjusted = vmin + (vmax - vmin) * 0.01 
 
 p = ax.scatter(
     xs, ys, zs, s=sizes, c=colors,
@@ -175,10 +165,9 @@ cbar.set_label("Number of Processes", rotation=270, labelpad=20, fontsize=12)
 # Subplot adjustments to create breathing room
 plt.subplots_adjust(left=0.12, right=0.92, bottom=0.12, top=0.9)
 
-# Improve 3D view angle (tweak these if necessary)
+# Improve 3D view angle
 ax.view_init(elev=25, azim=130)
 
-# Save
 combined_output_path = os.path.join(output_folder, "combined_all_systems_3D_scatter.png")
 plt.savefig(combined_output_path, dpi=300, bbox_inches="tight")
 plt.close(fig)

@@ -13,7 +13,9 @@ Output - output/temporal_spatial_output/v3
 
 ## Scatter Plots
 
-> This script will plot a 3D scatter plot where -
+### 3D Scatter plots for all organ systems
+
+> This script will plot a 3D scatter plot with dots size and color representing number of processes at that scale where -
 > - X axis is Spatial Scale => Organs, AS, FTU, CT, B
 > - Y axis is Temporal Scale -> <1 second, 1s - < 1min, 1min - < 1hr, 1hr - < 1day, 1day - < 1week, 1 week - < 1 year, 1 year or longer
 > - Z axis is Organ Systems -> CardioVascular, Digestive, Endocrine, Female Reproductive, Male Reproductive, Muscular, Pulmonary, Skeletal, Urinary System
@@ -21,6 +23,16 @@ Output - output/temporal_spatial_output/v3
 Run = code/3d_scatter_plot.py
 
 Output - output/3d_scatter_plots/
+
+### 2D bubble plots for each organ systems
+
+> This script will plot a 2D scatter plot for each Organ System with dots size and color representing number of processes at that scale where -
+> - X axis is Spatial Scale => Organs, AS, FTU, CT, B
+> - Y axis is Temporal Scale -> <1 second, 1s - < 1min, 1min - < 1hr, 1hr - < 1day, 1day - < 1week, 1 week - < 1 year, 1 year or longer
+
+Run = code/2d_plots.py
+
+Output - output/2d_plots/
 
 ## Analysis
 
