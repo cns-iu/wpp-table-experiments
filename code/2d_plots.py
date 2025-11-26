@@ -16,7 +16,7 @@ os.makedirs(output_folder, exist_ok=True)
 # --------------------------
 # Configuration (orders + visuals)
 # --------------------------
-spatial_order = ["Organ", "AS", "FTU", "CT", "B"][::-1]  
+spatial_order = ["Organ", "AS", "FTU", "CT", "B"]
 time_order = [
     "<1 second", "1s - < 1min", "1min - < 1hr", "1hr - < 1day",
     "1day - < 1week", "1 week - < 1 year", "1 year or longer"
@@ -139,7 +139,7 @@ for organ in organ_systems:
             colors = counts
 
             norm = None
-            if globals().get("use_log_norm", False) and colors.size > 0:
+            if globals().get("use_log_norm", True) and colors.size > 0:
                 cmin = np.nanmin(colors)
                 if cmin > 0:
                     cmax = np.nanmax(colors)
@@ -149,26 +149,29 @@ for organ in organ_systems:
             sc = ax.scatter(
                 df_os["xpos"].values, df_os["ypos"].values,
                 s=sizes, c=colors, cmap=cmap_choice, norm=norm,
-                alpha=0.9, edgecolors="w", linewidths=0.3
+                alpha=0.9, edgecolors="#808080", linewidths=0.8
             )
 
             
             ax.set_xticks(range(len(x_categories)))
             ax.set_xticklabels(x_categories, rotation=45, ha="right", fontsize=10)
+            ax.set_xlim(-0.5, len(x_categories) - 0.5)
             ax.set_yticks(range(len(y_categories)))
             ax.set_yticklabels(y_categories, fontsize=9)
 
             ax.set_xlabel("Spatial Scale", fontsize=12, labelpad=8)
             ax.set_ylabel("Time Range", fontsize=12, labelpad=8)
-            ax.set_title(f"{organ} — Temporal × Spatial (bubble)", fontsize=14)
+            ax.set_ylim(-0.5, len(x_categories) - 0.5)
+            # ax.set_title(f"{organ} — Temporal × Spatial (bubble)", fontsize=14)
 
             # colorbar
-            cbar = fig.colorbar(sc, ax=ax, pad=0.02, shrink=0.8)
-            cbar.set_label("Number of Processes", rotation=270, labelpad=12)
-
+            cbar = fig.colorbar(sc, ax=ax, pad=0.05, shrink=0.8)
+            cbar.set_label("Number of Processes", rotation=90, labelpad=12)
+            cbar.ax.yaxis.set_label_position("left")
+            
             plt.tight_layout()
             safe_name = organ.replace(" ", "_")
-            out_bubble = os.path.join(output_folder, f"{safe_name}_bubble.png")
+            out_bubble = os.path.join(output_folder, f"{safe_name}_plot.png")
             plt.savefig(out_bubble, bbox_inches="tight")
             plt.close(fig)
             print(f"Saved {out_bubble}")
@@ -187,11 +190,20 @@ for organ in organ_systems:
 
         ax.set_xlabel("Spatial Scale")
         ax.set_ylabel("Time Range")
-        ax.set_title(f"{organ} — Temporal × Spatial (heatmap)")
+        # ax.set_title(f"{organ} — Temporal × Spatial (heatmap)")
 
+        # cbar.set_label("Number of Processes", rotation=90, labelpad=12)
+        # cbar = fig.colorbar(im, ax=ax, pad=0.02, shrink=0.8)
+        
+        # Create vertical colorbar
         cbar = fig.colorbar(im, ax=ax, pad=0.02, shrink=0.8)
-        cbar.set_label("Number of Processes", rotation=270, labelpad=12)
 
+        # Remove default rotated label
+        cbar.set_label("")
+
+        # Add vertical label ABOVE the bar (this puts label FIRST)
+        cbar.ax.set_title("Number of Processes", rotation=90, fontsize=12, pad=20)        
+        
         annotate_cells = True
         if annotate_cells:
             for i in range(pivot.shape[0]):
