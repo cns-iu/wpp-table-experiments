@@ -10,7 +10,7 @@ import matplotlib.colors as mcolors
 # Paths (adjust if needed)
 # --------------------------
 input_folder = "./output/temporal_spatial_output/v3/"
-output_folder = "./output/2d_plots/"
+output_folder = "./output/2d_plots/v3/"
 os.makedirs(output_folder, exist_ok=True)
 
 # --------------------------
@@ -107,7 +107,6 @@ long_df["z"] = long_df["Organ System"].astype("category").cat.set_categories(org
 long_df["x"] = long_df["Spatial Scale"].astype("category").cat.set_categories(spatial_order).cat.codes
 long_df["y"] = long_df["Time Range"].astype("category").cat.set_categories(time_order).cat.codes
 
-
 long_df = long_df[(long_df["x"] >= 0) & (long_df["y"] >= 0) & (long_df["z"] >= 0)].copy()
 
 x_categories = spatial_order[:]
@@ -117,7 +116,20 @@ y_map = {cat: i for i, cat in enumerate(y_categories)}
 
 organ_systems = [s for s in organ_system_order if s in long_df["Organ System"].unique()]
 
+# --------------------------
+# CALCULATE GLOBAL COLORBAR RANGE (same as 3D plot)
+# --------------------------
+all_counts = long_df["Count"].values.astype(float)
+global_vmin = max(1, all_counts.min())  # avoid 0
+global_vmax = all_counts.max()
+# Apply same adjustment as 3D plot
+global_vmin_adjusted = global_vmin + (global_vmax - global_vmin) * 0.01
 
+print(f"Global colorbar range: {global_vmin_adjusted:.2f} to {global_vmax:.2f}")
+
+# --------------------------
+# Plot settings
+# --------------------------
 make_heatmaps = False  
 make_bubbles = True     
 
@@ -137,33 +149,29 @@ for organ in organ_systems:
             sizes = (counts ** 0.9) * 30  
             colors = counts
 
-            norm = None
-            if globals().get("use_log_norm", True) and colors.size > 0:
-                cmin = np.nanmin(colors)
-                if cmin > 0:
-                    cmax = np.nanmax(colors)
-                    norm = mcolors.LogNorm(vmin=max(1, float(cmin)), vmax=float(cmax))
-
             fig, ax = plt.subplots(figsize=figsize, dpi=dpi)
+            
+            # Use GLOBAL colorbar range
             sc = ax.scatter(
                 df_os["xpos"].values, df_os["ypos"].values,
-                s=sizes, c=colors, cmap=cmap_choice, norm=norm,
-                alpha=0.9, edgecolors="#808080", linewidths=0.8
+                s=sizes, c=colors, cmap=cmap_choice,
+                alpha=0.9, edgecolors="#808080", linewidths=0.8,
+                vmin=global_vmin_adjusted, vmax=global_vmax  # GLOBAL RANGE
             )
 
-            
+            # Set ALL axis labels (even if no data)
             ax.set_xticks(range(len(x_categories)))
             ax.set_xticklabels(x_categories, rotation=45, ha="right", fontsize=10)
             ax.set_xlim(-0.5, len(x_categories) - 0.5)
+            
             ax.set_yticks(range(len(y_categories)))
             ax.set_yticklabels(y_categories, fontsize=9)
+            ax.set_ylim(-0.5, len(y_categories) - 0.5)
 
             ax.set_xlabel("Spatial Scale", fontsize=12, labelpad=8)
             ax.set_ylabel("Time Range", fontsize=12, labelpad=8)
-            ax.set_ylim(-0.5, len(x_categories) - 0.5)
-            # ax.set_title(f"{organ} — Temporal × Spatial (bubble)", fontsize=14)
 
-            # colorbar
+            # colorbar with GLOBAL range
             cbar = fig.colorbar(sc, ax=ax, pad=0.05, shrink=0.8)
             cbar.set_label("Number of Processes", rotation=90, labelpad=12)
             cbar.ax.yaxis.set_label_position("left")
@@ -182,25 +190,25 @@ for organ in organ_systems:
 
         fig, ax = plt.subplots(figsize=figsize, dpi=dpi)
         
-        im = ax.imshow(pivot.values, aspect="auto", origin="lower", interpolation="none", cmap=cmap_choice)
+        # Use GLOBAL colorbar range for heatmap too
+        im = ax.imshow(
+            pivot.values, aspect="auto", origin="lower", 
+            interpolation="none", cmap=cmap_choice,
+            vmin=global_vmin_adjusted, vmax=global_vmax  # GLOBAL RANGE
+        )
 
-        ax.set_xticks(range(len(x_categories))); ax.set_xticklabels(x_categories, rotation=45, ha="right", fontsize=10)
-        ax.set_yticks(range(len(y_categories))); ax.set_yticklabels(y_categories, fontsize=9)
+        # Set ALL axis labels (even if no data)
+        ax.set_xticks(range(len(x_categories)))
+        ax.set_xticklabels(x_categories, rotation=45, ha="right", fontsize=10)
+        ax.set_yticks(range(len(y_categories)))
+        ax.set_yticklabels(y_categories, fontsize=9)
 
         ax.set_xlabel("Spatial Scale")
         ax.set_ylabel("Time Range")
-        # ax.set_title(f"{organ} — Temporal × Spatial (heatmap)")
-
-        # cbar.set_label("Number of Processes", rotation=90, labelpad=12)
-        # cbar = fig.colorbar(im, ax=ax, pad=0.02, shrink=0.8)
         
         # Create vertical colorbar
         cbar = fig.colorbar(im, ax=ax, pad=0.02, shrink=0.8)
-
-        # Remove default rotated label
         cbar.set_label("")
-
-        # Add vertical label ABOVE the bar (this puts label FIRST)
         cbar.ax.set_title("Number of Processes", rotation=90, fontsize=12, pad=20)        
         
         annotate_cells = True
@@ -212,6 +220,7 @@ for organ in organ_systems:
                         ax.text(j, i, int(val), ha="center", va="center", fontsize=8)
 
         plt.tight_layout()
+        safe_name = organ.replace(" ", "_")
         out_heatmap = os.path.join(output_folder, f"{safe_name}_heatmap.png")
         plt.savefig(out_heatmap, bbox_inches="tight")
         plt.close(fig)

@@ -71,5 +71,9 @@ Only in HRA => 4791
 
 - output\analysis\all_Uberon_statistics\all_Uberon_ids_in_WPP.csv
 
+> === SUMMARY ===
+> Total CL IDs checked: 108
+> Present in ASTCB: 35
+> Missing in ASTCB: 73
 ### Challenges
 

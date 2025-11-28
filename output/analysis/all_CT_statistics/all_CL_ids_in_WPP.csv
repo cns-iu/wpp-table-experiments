@@ -1,0 +1,110 @@
+CL_LABELS,CL_IDs
+sperm,CL:0000019
+oocyte,CL:0000023
+stem cell,CL:0000034
+osteoblast,CL:0000062
+epithelial cell,CL:0000066
+epithelial cell of pancreas,CL:0000083
+osteoclast,CL:0000092
+Motor neurons,CL:0000100
+autonomic neuron,CL:0000107
+endothelial cell,CL:0000115
+osteocyte,CL:0000137
+secretory cell,CL:0000151
+peptic cell,CL:0000155
+goblet cell,CL:0000160
+parietal cell,CL:0000162
+chromaffin cell,CL:0000166
+type B cell of pancreas,CL:0000169
+pancreatic A cell,CL:0000171
+pancreatic D cell,CL:0000173
+luteal cell,CL:0000175
+Leydig cell,CL:0000178
+Hepatocyte,CL:0000182
+hepatocyte,CL:0000182
+smooth muscle cell,CL:0000192
+Sertoli cell,CL:0000216
+erythrocyte,CL:0000232
+platelet,CL:0000233
+chief cell of parathyroid gland,CL:0000446
+white adipocyte,CL:0000448
+digestive enzyme secreting cell,CL:0000470
+granulosa cell,CL:0000501
+theca cell,CL:0000503
+enterochromaffin-like cell,CL:0000504
+gastrin secreting cell,CL:0000509
+neuron,CL:0000540
+parafollicular cell,CL:0000570
+enterocyte,CL:0000584
+acinar cell,CL:0000622
+kidney granular cell,CL:0000648
+podocyte,CL:0000653
+PP cell,CL:0000696
+dopaminergic neuron,CL:0000700
+striated muscle cell,CL:0000737
+cardiac muscle cell,CL:0000746
+pulmonary alveolar type 2 cell,CL:0002063
+pancreatic acinar cell,CL:0002064
+enterocyte of epithelium of large intestine,CL:0002071
+nodal myocyte,CL:0002072
+tanycyte,CL:0002085
+interstitial cell of Cajal,CL:0002088
+regular atrial cardiac myocyte,CL:0002129
+regular ventricular cardiac myocyte,CL:0002131
+mucous cell of stomach,CL:0002180
+stromal cell of endometrium,CL:0002255
+epithelial cell of thyroid gland,CL:0002257
+type ECL enteroendocrine cell,CL:0002273
+type I enteroendocrine cell,CL:0002277
+GIP cell,CL:0002278
+type L enteroendocrine cell,CL:0002279
+type S enteroendocrine cell,CL:0002281
+type I cell of carotid body,CL:0002292
+epithelial cell of distal tubule,CL:0002305
+epithelial cell of proximal tubule,CL:0002306
+lactocyte,CL:0002325
+primitive red blood cell,CL:0002355
+type M enteroendocrine cell,CL:0002502
+kidney epithelial cell,CL:0002518
+fibroblast of dermis,CL:0002551
+smooth muscle cell of trachea,CL:0002600
+glomerular capillary,CL:0004212
+ghrelin secreting cell,CL:0005018
+skeletal muscle fiber,CL:0008002
+lower motor neuron,CL:0008039
+salivary gland cell,CL:0009005
+magnocellular neurosecretory cell,CL:0011003
+vagal neural crest cell,CL:0011017
+chorionic trophoblast cell,CL:0011101
+intestine goblet cell,CL:0019031
+colonocyte,CL:1000347
+kidney collecting duct epithelial cell,CL:1000454
+cholangiocyte,CL:1000488
+kidney glomerular epithelial cell,CL:1000510
+juxtaglomerular complex cell,CL:1000618
+kidney proximal convoluted tubule epithelial cell,CL:1000838
+kidney proximal straight tubule epithelial cell,CL:1000839
+kidney distal convoluted tubule epithelial cell,CL:1000849
+macula densa epithelial cell,CL:1000850
+kidney arterial blood vessel cell,CL:1000891
+kidney loop of Henle epithelial cell,CL:1000909
+kidney afferent arteriolar cell,CL:1001006
+kidney efferent arteriole endothelial cell,CL:1001099
+kidney loop of Henle thick ascending limb epithelial cell,CL:1001106
+kidney loop of Henle thin ascending limb epithelial cell,CL:1001107
+kidney collecting duct principal cell,CL:1001431
+parvocellular neurosecretory cell,CL:1001505
+lung endothelial cell,CL:1001567
+duodenum secretory cell,CL:1001589
+small intestine secretory cell,CL:1001598
+pancreas exocrine glandular cell,CL:1001599
+decidual cell,CL:2000002
+central nervous system neuron,CL:2000029
+liver dendritic cell,CL:2000055
+placental villous trophoblast,CL:2000060
+pulmonary capillary endothelial cell,CL:4028001
+kidney loop of Henle short descending thin limb epithelial cell,CL:4030012
+renal cortical fibroblast,CL:4030025
+cycling endothelial cell of lymphatic vessel,CL:4033079
+mesenchymal stem cell of apical papilla,CL:4040005
+intestinal villus capillary endothelial cell,CL:4052003

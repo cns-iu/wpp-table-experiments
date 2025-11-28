@@ -1,0 +1,36 @@
+CL_LABELS,CL_IDs
+stem cell,CL:0000034
+epithelial cell,CL:0000066
+Motor neurons,CL:0000100
+endothelial cell,CL:0000115
+type B cell of pancreas,CL:0000169
+pancreatic A cell,CL:0000171
+pancreatic D cell,CL:0000173
+luteal cell,CL:0000175
+Hepatocyte,CL:0000182
+smooth muscle cell,CL:0000192
+erythrocyte,CL:0000232
+platelet,CL:0000233
+theca cell,CL:0000503
+gastrin secreting cell,CL:0000509
+neuron,CL:0000540
+enterocyte,CL:0000584
+kidney granular cell,CL:0000648
+podocyte,CL:0000653
+cardiac muscle cell,CL:0000746
+pulmonary alveolar type 2 cell,CL:0002063
+pancreatic acinar cell,CL:0002064
+enterocyte of epithelium of large intestine,CL:0002071
+interstitial cell of Cajal,CL:0002088
+stromal cell of endometrium,CL:0002255
+type I cell of carotid body,CL:0002292
+epithelial cell of proximal tubule,CL:0002306
+kidney collecting duct epithelial cell,CL:1000454
+kidney distal convoluted tubule epithelial cell,CL:1000849
+macula densa epithelial cell,CL:1000850
+kidney efferent arteriole endothelial cell,CL:1001099
+kidney loop of Henle thick ascending limb epithelial cell,CL:1001106
+kidney loop of Henle thin ascending limb epithelial cell,CL:1001107
+kidney collecting duct principal cell,CL:1001431
+pancreas exocrine glandular cell,CL:1001599
+kidney loop of Henle short descending thin limb epithelial cell,CL:4030012
