@@ -1,0 +1,46 @@
+﻿Label,ID,Level_Type,Found_in_ASCTB
+pancreatic A cell,CL:0000171,Cell,Found
+type B cell of pancreas,CL:0000169,Cell,Found
+pancreatic D cell,CL:0000173,Cell,Found
+PP cell,CL:0000696,Cell,Not found
+zona glomerulosa of adrenal gland,UBERON:0002053,Structure,Not found
+zona fasciculata of adrenal gland,UBERON:0002054,Structure,Not found
+zona reticularis of adrenal gland,UBERON:0002055,Structure,Not found
+chromaffin cell,CL:0000166,Cell,Not found
+magnocellular neurosecretory cell,CL:0011003,Cell,Not found
+neurohypophysis,UBERON:0002198,Structure,Not found
+parvocellular neurosecretory cell,CL:1001505,Cell,Not found
+adenohypophysis,UBERON:0002196,Structure,Not found
+suprachiasmatic nucleus,UBERON:0002034,Structure,Not found
+pineal body,UBERON:0001905,Structure,Found
+tanycyte,CL:0002085,Cell,Not found
+median preoptic nucleus,UBERON:0002625,Structure,Not found
+epithelial cell of thyroid gland,CL:0002257,Cell,Not found
+parafollicular cell,CL:0000570,Cell,Not found
+colloid of thyroid follicle,UBERON:0012364,Structure,Not found
+chief cell of parathyroid gland,CL:0000446,Cell,Not found
+granulosa cell,CL:0000501,Cell,Not found
+luteal cel,CL:0000175,Cell,Found
+white adipocyte,CL:0000448,Cell,Not found
+skeletal muscle fiber,CL:0008002,Cell,Not found
+fibroblast of dermis,CL:0002551,Cell,Not found
+Leydig cell,CL:0000178,Cell,Not found
+Sertoli cell,CL:0000216,Cell,Not found
+ghrelin secreting cell,CL:0005018,Cell,Not found
+type L enteroendocrine cell,CL:0002279,Cell,Not found
+GIP cell,CL:0002278,Cell,Not found
+gastrin secreting cell,CL:0000509,Cell,Found
+parietal cell,CL:0000162,Cell,Not found
+type I enteroendocrine cell,CL:0002277,Cell,Not found
+type S enteroendocrine cell,CL:0002281,Cell,Not found
+type M enteroendocrine cell,CL:0002502,Cell,Not found
+regular atrial cardiac myocyte,CL:0002129,Cell,Not found
+regular ventricular cardiac myocyte,CL:0002131,Cell,Not found
+juxtaglomerular complex cell,CL:1000618,Cell,Not found
+pulmonary capillary endothelial cell,CL:4028001,Cell,Not found
+kidney proximal convoluted tubule epithelial cell,CL:1000838,Cell,Not found
+kidney glomerular epithelial cell,CL:1000510,Cell,Not found
+placental villous trophoblast,CL:2000060,Cell,Not found
+osteoblast,CL:0000062,Cell,Not found
+hepatocyte,CL:0000182,Cell,Found
+capillary,UBERON:0001982,Structure,Found

@@ -1,0 +1,10 @@
+organ_system,Organ_unique_processes,AS_unique_processes,FTU_unique_processes,CT_unique_processes,B_unique_processes,unique_per_spatial_column(double_count),total_processes_including_duplicates_and_missing,true_total_unique_across_all_spatial_(no double_count),total_missing_processes
+cardiovascular_system_final_spatial_temporal_v3,0,6,0,7,0,13,69,11,37
+digestive_system_final_spatial_temporal_v3,106,39,0,75,0,220,393,219,26
+endocrine_system_final_spatial_temporal_v3,9,6,0,47,0,62,167,60,37
+female_reproductive_system_final_spatial_temporal_v3,11,29,0,23,0,63,157,61,30
+male_reproductive_system_final_spatial_temporal_v3,4,17,0,9,0,30,89,28,31
+muscular_system_final_spatial_temporal_v3,0,1,0,3,0,4,63,3,39
+pulmonary_system_final_spatial_temporal_v3,123,32,0,31,0,186,308,186,36
+skeletal_system_final_spatial_temporal_v3,0,1,0,5,0,6,55,5,42
+urinary_system_final_spatial_temporal_v3,46,19,0,63,0,128,212,126,30

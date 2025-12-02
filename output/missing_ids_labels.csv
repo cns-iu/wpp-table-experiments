@@ -1,0 +1,30 @@
+id,label
+UBERON:0000057,urethra
+UBERON:0001258,neck of urinary bladder
+UBERON:0014388,kidney collecting duct epithelium
+UBERON:0006853,renal cortex tubule
+UBERON:0001288,loop of Henle
+UBERON:0003644,kidney arterial blood vessel
+UBERON:0004228,urinary bladder smooth muscle
+UBERON:0004919,external urethral sphincter
+UBERON:0000013,sympathetic nervous system
+UBERON:0005270,renal cortex interstitium
+UBERON:0035758,peritubular capillary plexus of kidney
+CL:0002305,epithelial cell of distal tubule
+UBERON:0001287,proximal convoluted tubule
+UBERON:0006851,renal cortex peritubular capillary
+UBERON:0006854,distal straight tubule postmacula segment
+CL:0002518,kidney collecting duct epithelial cell
+CL:1000838,kidney proximal convoluted tubule epithelial cell
+CL:1000909,kidney loop of Henle epithelial cell
+CL:1001006,kidney afferent arteriole cell
+CL:1000839,kidney proximal straight tubule epithelial cell
+CL:0000239,brush border epithelial cell
+CL:1000892,kidney capillary endothelial cell
+LOINC2915-7,Renin [Enzymatic activity/volume] in Plasma
+LOINC2160-0,Creatinine [Mass/volume] in Serum or Plasma
+LOINC2695-5,Osmolality of Urine
+ULTRASOUNDKIDNEY,LOINC:3167-4
+LOINC1751-7,Albumin [Mass/volume] in Serum or Plasma
+LOINC2692-2,Osmolality of Serum or Plasma
+SKELETAL,
