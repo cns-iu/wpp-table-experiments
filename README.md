@@ -2,14 +2,15 @@
 Experimental repo for WPP tables
 
 All ids and types from asctb and HRA kg are extracted in this table
-> ./data/all_asctb_ids_with_types.py
+> ./code/HRA_all_ids_ectractor/all_asctb_ids_with_types.py
+> ./data/all_asctb_ids_with_types.csv
 
 ## Spatial Temporal tables using EffectorScale 
 
 > This script will create spatial temporal tables for all organ systems using "EffectorScale" to identify the spatial scale and "TimeScale" to identify time scale
-Run - new_system.py
+Run - code/WPP Tables/v2/WPP_tables.py
 
-Output - output/temporal_spatial_output/v3
+Output - output/temporal_spatial_output/v3/
 
 ## Scatter Plots
 
@@ -20,7 +21,7 @@ Output - output/temporal_spatial_output/v3
 > - Y axis is Temporal Scale -> <1 second, 1s - < 1min, 1min - < 1hr, 1hr - < 1day, 1day - < 1week, 1 week - < 1 year, 1 year or longer
 > - Z axis is Organ Systems -> CardioVascular, Digestive, Endocrine, Female Reproductive, Male Reproductive, Muscular, Pulmonary, Skeletal, Urinary System
 
-Run = code/3d_scatter_plot.py
+Run = code/Scatter Plots/3d_scatter_plot.py
 
 Output - output/3d_scatter_plots/
 
@@ -30,7 +31,7 @@ Output - output/3d_scatter_plots/
 > - X axis is Spatial Scale => Organs, AS, FTU, CT, B
 > - Y axis is Temporal Scale -> <1 second, 1s - < 1min, 1min - < 1hr, 1hr - < 1day, 1day - < 1week, 1 week - < 1 year, 1 year or longer
 
-Run = code/2d_plots.py
+Run = code/Scatter Plots/2d_plots.py
 
 Output - output/2d_plots/
 
@@ -71,9 +72,15 @@ Only in HRA => 4791
 
 - output\analysis\all_Uberon_statistics\all_Uberon_ids_in_WPP.csv
 
-> === SUMMARY ===
+> === SUMMARY For CT in WPP and HRA===
+
 > Total CL IDs checked: 108
 > Present in ASTCB: 35
 > Missing in ASTCB: 73
+
+- code/CT_extraction
+
+- output/analysis/all_CT_statistics
+
 ### Challenges
 
