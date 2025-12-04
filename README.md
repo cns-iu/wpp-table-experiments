@@ -81,9 +81,9 @@ Only in HRA => 4791
 
 > === SUMMARY For CT in WPP and HRA===
 
-> Total CL IDs checked: 108
-> Present in ASTCB: 35
-> Missing in ASTCB: 73
+> - Total CL IDs checked: 108
+> - Present in ASTCB: 35
+> - Missing in ASTCB: 73
 
 - code/CT_extraction
 
