@@ -3,7 +3,7 @@ import pandas as pd
 import re
 
 # --- CONFIGURATION ---
-MAIN_CSV_PATH = "./data/WPP Tables/Endocrine-System_v1.0_DRAFT_20251105 - Sheet1.csv"
+MAIN_CSV_PATH = "./data/WPP Input Tables/Endocrine-System_v1.0_DRAFT_20251105 - Sheet1.csv"
 OUTPUT_PATH = "./output/temporal_spatial_output/v3/endocrine_system_final_spatial_temporal_v3.csv"
 
 # --- TIME SCALE RANGES ---
