@@ -3,7 +3,7 @@ __pycache__/
 *.py[codz]
 *$py.class
 
-intermediate data/
+intermediate_data/
 output_logs/
 code/
 # C extensions
