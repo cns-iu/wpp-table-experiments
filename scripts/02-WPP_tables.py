@@ -3,12 +3,13 @@ import pandas as pd
 import glob
 import os
 import re
+import sys
 
 # --------------------
 # CONFIG - change only these
 # --------------------
 INPUT_FOLDER = "./data/WPP Input Tables/"   # root folder containing CSV files (will search recursively)
-OUTPUT_FOLDER = "./output/temporal_spatial_output/v6/"
+OUTPUT_FOLDER = "./output/temporal_spatial_output/v7/"
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
 # --------------------
@@ -121,115 +122,145 @@ def clean_effector_id(eff_id):
 def normalize_time(val):
     if pd.isna(val):
         return "nan"
-    val = str(val).lower()
-    val = re.sub(r"[–,\-\s]", "", val)
-    return val.strip()
-
-# def normalize_spatial(val, row, effector_id_col=None, ftu_ids_up=None):
-#     """
-#     Robust spatial normalization:
-#       - uses SPATIAL_MAPPING for direct keys,
-#       - if key starts with 'tissue' will check effector id column (case insensitive) for FTU membership,
-#       - accepts effector_id_col name (string) and ftu_ids_up (upper-cased set) to compare.
-#     """
-#     if pd.isna(val) or str(val).strip() == "":
-#         return SPATIAL_MAPPING.get("nan", "Unknown")
-#     val_str = str(val).strip().lower()
-#     normalized_key = re.sub(r"[^a-z0-9]", "", val_str)
-#     if normalized_key in SPATIAL_MAPPING:
-#         if normalized_key == "tissueftu":
-#             return "FTU"
-#         return SPATIAL_MAPPING[normalized_key]
-#     if normalized_key.startswith("tissue"):
-#         # consult effector id if provided
-#         if effector_id_col is not None and effector_id_col in row.index:
-#             raw_eff = row.get(effector_id_col)
-#             cleaned = clean_effector_id(raw_eff)
-#             if cleaned and ftu_ids_up and cleaned in ftu_ids_up:
-#                 return "FTU"
-#         return "AS"
-#     return SPATIAL_MAPPING.get(normalized_key, "Unknown")
+    s = str(val).lower()
+    s = re.sub(r"[–—\-\s,]+", "", s)
+    return s
 
 def normalize_spatial(val, effector_id=None):
-    if pd.isna(val) or str(val).strip() == "":
+    val_str = str(val).strip() if pd.notna(val) else ""
+    if val_str == "":
         return SPATIAL_MAPPING.get("nan", "Unknown")
-    v = re.sub(r"[^a-z0-9]", "", str(val).strip().lower())
+
+    v = re.sub(r"[^a-z0-9]", "", val_str.lower())
+
     if v == "tissueftu":
         return "FTU"
     if v.startswith("tissue"):
-        if effector_id is not None and pd.notna(effector_id):
-            eff_id_str = str(effector_id).strip()
-            if eff_id_str in ftu_ids:
-                return "FTU"
+        eff_id_str = str(effector_id).strip() if pd.notna(effector_id) else ""
+        if eff_id_str.upper() in ftu_ids or clean_effector_id(eff_id_str) in ftu_ids:
+            return "FTU"
         return "AS"
+
     return SPATIAL_MAPPING.get(v, "Unknown")
 
 def get_lowest_function(row):
     lowest_func = ""
     function_cols = [col for col in row.index if re.match(r"Function/\d+$", col.strip())]
+    if not function_cols:
+        # heuristics: look for "Lowest Function" column or "Lowest_Function"
+        for cand in ["Lowest Function", "Lowest_Function", "LowestFunction"]:
+            if cand in row.index:
+                val = str(row.get(cand, "")).strip()
+                if pd.notna(val) and val != "" and val.lower() != "nan":
+                    return val
+        return "Unknown"
+
     function_cols.sort(key=lambda c: int(re.search(r"\d+", c).group()))
+    # iterate and keep the last non-empty (matches your previous behavior)
+    last_val = ""
     for col in function_cols:
-        val = str(row.get(col, "")).strip()
-        if pd.notna(val) and val.lower() != "nan" and val != "":
-            lowest_func = val
-    return lowest_func if lowest_func else "Unknown"
+        val = row.get(col, "")
+        if pd.notna(val) and str(val).strip().lower() not in {"", "nan"}:
+            last_val = str(val).strip()
+    return last_val if last_val else "Unknown"
 
-def build_combined_process(row):
-    proc = row.get("Process", "")
-    if pd.isna(proc) or str(proc).strip().lower() in ["", "nan", "none", "null"]:
-        return None   # ← SKIP MISSING ENTIRELY
+# split Process cell on ';' into fragments
+def split_processes_cell(proc_cell):
+    """
+    Safely split the Process cell (string or float) on semicolons.
+    """
+    if pd.isna(proc_cell):
+        return []
 
-    proc = str(proc).strip()
+    s = str(proc_cell).strip()
+    if s.lower() in {"", "nan", "none", "null"}:
+        return []
 
-    lf = row.get("Lowest_Function", "")
-    if lf and lf != "Unknown":
-        return f"{lf}@{proc}"
+    parts = re.split(r"\s*;\s*", s)
+    return [
+        p.strip()
+        for p in parts
+        if p and p.strip() and p.strip().lower() not in {"nan", "none", "null"}
+    ]
+
+def make_function_at_process(lowest_function, process_fragment):
+    if process_fragment is None:
+        return None
+
+    pf = str(process_fragment).strip()
+    if pf == "":
+        return None
+
+    lf = str(lowest_function).strip() if pd.notna(lowest_function) else ""
+
+    if lf.lower() != "unknown" and lf != "":
+        return f"{lf}@{pf}"
     else:
-        return proc
+        return pf
 
-def process_and_save_single(MAIN_CSV_PATH, OUTPUT_PATH):
+# --------------------
+# Core processing for a single file
+# --------------------
+def process_and_save_single(MAIN_CSV_PATH, OUTPUT_PATH, header_row=11):
+    # read with given header row (0-indexed)
     main = pd.read_csv(MAIN_CSV_PATH, header=header_row, encoding="utf-8-sig")
+    # strip whitespace from column names
     main.columns = main.columns.str.strip()
 
-    # normalize TimeScale and compute Lowest_Function & Combined_Process
-    main["TimeScale_norm"] = main["TimeScale"].apply(normalize_time)
+    # compute Lowest_Function
     main["Lowest_Function"] = main.apply(get_lowest_function, axis=1)
-    main["Combined_Process"] = main.apply(build_combined_process, axis=1)
 
+    # split Process into list fragments
+    main["Process_List"] = main.get("Process", pd.Series([""] * len(main))).apply(split_processes_cell)
+
+    # explode so each process fragment gets its own row
+    exploded = main.explode("Process_List").copy()
+
+    # build Function@Process
+    exploded["Function@Process"] = exploded.apply(
+    lambda r: make_function_at_process(
+        str(r.get("Lowest_Function", "")),
+        str(r.get("Process_List", "")) if pd.notna(r.get("Process_List", "")) else ""
+    ),
+    axis=1
+    )
+
+    # drop rows where Function@Process is None or empty (missing processes)
+    exploded = exploded[exploded["Function@Process"].notna() & (exploded["Function@Process"].astype(str).str.strip() != "")]
+
+    # normalize TimeScale and Spatial_Type on exploded rows
     # find effector id column case-insensitively once per file
-    effector_id_col = find_col_case_insensitive(main.columns, ["Effector/ID","Effector ID","Effector_ID","Effector/Id","Effector/identifier","EffectorID"])
-    # prepare uppercase FTU id set for robust comparison
-    ftu_ids_up = {x.upper() for x in ftu_ids} if ftu_ids else set()
+    effector_id_col = find_col_case_insensitive(exploded.columns, ["Effector/ID","Effector ID","Effector_ID","Effector/Id","Effector/identifier","EffectorID"])
+    # apply TimeScale normalization
+    if "TimeScale" in exploded.columns:
+        exploded["TimeScale_norm"] = exploded["TimeScale"].apply(normalize_time)
+    else:
+        exploded["TimeScale_norm"] = "nan"
 
-    # compute Spatial_Type using robust normalizer
-    # main["Spatial_Type"] = main.apply(
-    #     lambda row: normalize_spatial(row.get("EffectorScale", ""), row, effector_id_col, ftu_ids_up),
-    #     axis=1
-    # )
-    main["Spatial_Type"] = main.apply(lambda r: normalize_spatial(r.get("EffectorScale", ""), r.get("Effector/ID", "")), axis=1)
+    # compute Spatial_Type - try common columns
+    # prefer explicit 'EffectorScale' column, otherwise check candidate names
+    effector_scale_col = find_col_case_insensitive(exploded.columns, ["EffectorScale","Effector Scale","Effector_Scale","Scale"])
+    # If no explicit effector scale column, set as nan to map to Unknown
+    if effector_scale_col is None:
+        exploded["Spatial_Type"] = SPATIAL_MAPPING.get("nan", "Unknown")
+    else:
+        if effector_id_col:
+            exploded["Spatial_Type"] = exploded.apply(lambda r: normalize_spatial(r.get(effector_scale_col, ""), r.get(effector_id_col, "")), axis=1)
+        else:
+            exploded["Spatial_Type"] = exploded[effector_scale_col].apply(lambda v: normalize_spatial(v, None))
 
-    # expand time ranges (some entries map to multiple TIME_MAPPING entries)
-    melted_df = main.copy()
-    melted_df["Time Range"] = melted_df["TimeScale_norm"].apply(lambda x: TIME_MAPPING.get(x, ["Unknown"]))
-    melted_df = melted_df.explode("Time Range")
+    # Map time scales that expand to multiple TIME_MAPPING entries
+    exploded["Time Range"] = exploded["TimeScale_norm"].apply(lambda x: TIME_MAPPING.get(x, ["Unknown"]))
+    exploded = exploded.explode("Time Range")
 
-    # dedupe and build Function@Process strings per (Time Range, Spatial_Type)
+    # Now group by Time Range + Spatial_Type and collect unique Function@Process entries
     grouped = (
-        melted_df.groupby(["Time Range", "Spatial_Type"])["Combined_Process"]
-        .apply(
-            lambda x: "? ".join(
-                sorted(
-                    set(
-                        p.strip() for process_str in x.dropna()
-                        for p in process_str.split('?') if p.strip()
-                    )
-                )
-            )
-        )
+        exploded.groupby(["Time Range", "Spatial_Type"])["Function@Process"]
+        .apply(lambda s: "? ".join(sorted(set(ss.strip() for ss in s.dropna() if str(ss).strip()))))
         .reset_index(name="Function@Process")
     )
 
-    # drop empty/Unknown groups
+    # drop empty/Unknown groups (same as before)
     grouped = grouped[grouped["Function@Process"] != ""]
     grouped = grouped[grouped["Function@Process"] != "Unknown"]
 
@@ -249,46 +280,53 @@ def process_and_save_single(MAIN_CSV_PATH, OUTPUT_PATH):
         if t not in pivot.columns:
             pivot[t] = ""
 
+    # Ensure desired ordering of time rows
     pivot = pivot.set_index("Time Range").reindex(time_category_order).fillna("").reset_index()
     pivot["Time Range"] = pd.Categorical(pivot["Time Range"], categories=time_category_order, ordered=True)
     pivot = pivot.sort_values("Time Range").reset_index(drop=True)
 
     final_pivot = pivot[["Time Range"] + desired_spatial_types]
 
+    # Save to CSV
     final_pivot.to_csv(OUTPUT_PATH, index=False, encoding="utf-8-sig")
 
 # --------------------
-# Walk all folders under INPUT_FOLDER and process every CSV found (logic unchanged)
+# Walk all folders under INPUT_FOLDER and process every CSV found
 # --------------------
-csv_files = sorted(glob.glob(os.path.join(INPUT_FOLDER, "**", "*.csv"), recursive=True))
-if not csv_files:
-    print("No CSV files found in", INPUT_FOLDER)
-    raise SystemExit(1)
+def main_run():
+    csv_files = sorted(glob.glob(os.path.join(INPUT_FOLDER, "**", "*.csv"), recursive=True))
+    if not csv_files:
+        print("No CSV files found in", INPUT_FOLDER)
+        sys.exit(1)
 
-for file_path in csv_files:
-    file_name = os.path.basename(file_path)
-    if "endocrine" in file_name.lower():
-        header_row = 12
-    else:
-        header_row = 11
-    base_noext = os.path.splitext(file_name)[0]
-    words = re.findall(r"\w+", base_noext)
-    if len(words) >= 2:
-        prefix = f"{words[0]}_{words[1]}"
-    elif len(words) == 1:
-        prefix = words[0]
-    else:
-        prefix = base_noext
+    for file_path in csv_files:
+        file_name = os.path.basename(file_path)
+        # header row heuristic (your previous rule)
+        if "endocrine" in file_name.lower():
+            header_row = 12
+        else:
+            header_row = 11
 
-    out_name = f"{prefix}_spatial_temporal_table.csv"
-    out_path = os.path.join(OUTPUT_FOLDER, out_name)
+        base_noext = os.path.splitext(file_name)[0]
+        words = re.findall(r"\w+", base_noext)
+        if len(words) >= 2:
+            prefix = f"{words[0]}_{words[1]}"
+        elif len(words) == 1:
+            prefix = words[0]
+        else:
+            prefix = base_noext
 
-    try:
-        process_and_save_single(file_path, out_path)
-        print(f"Saved: {out_path}")
-    except Exception as e:
-        # preserve original logic; avoid stopping on one bad file
-        print(f"Failed processing {file_name}: {e}")
-        continue
+        out_name = f"{prefix}_spatial_temporal_table.csv"
+        out_path = os.path.join(OUTPUT_FOLDER, out_name)
 
-print("Done processing all folders.")
+        try:
+            process_and_save_single(file_path, out_path, header_row=header_row)
+            print(f"Saved: {out_path}")
+        except Exception as e:
+            print(f"Failed processing {file_name}: {e}")
+            continue
+
+    print("Done processing all folders.")
+
+if __name__ == "__main__":
+    main_run()

@@ -1,0 +1,38 @@
+﻿Effector/LABEL,Effector/ID(s),Files,Count_files
+smooth muscle cell,CL:0000192,Cardiovascular_system_v1;Digestive_system_v1;Endocrine_System_v1;Muscular_system_v1;Pulmonary_system_v1,5
+kidney proximal convoluted tubule epithelial cell,CL:1000838,Cardiovascular_system_v1;Endocrine_System_v1;Skeletal_system_v1;Urinary_system_v1,4
+skeletal muscle fiber,CL:0008002,Endocrine_System_v1;Female_reproductive_v;Male_reproductive;Muscular_system_v1,4
+adenohypophysis,UBERON:0002196,Endocrine_System_v1;Female_reproductive_v;Male_reproductive,3
+endothelial cell,CL:0000115,Cardiovascular_system_v1;Endocrine_System_v1;Fascia_System_v1,3
+fibroblast of dermis,CL:0002551,Endocrine_System_v1;Female_reproductive_v;Male_reproductive,3
+kidney distal convoluted tubule epithelial cell,CL:1000849,Endocrine_System_v1;Skeletal_system_v1;Urinary_system_v1,3
+osteoblast,CL:0000062,Endocrine_System_v1;Male_reproductive;Skeletal_system_v1,3
+osteoclast,CL:0000092,Endocrine_System_v1;Male_reproductive;Skeletal_system_v1,3
+parvocellular neurosecretory cell,CL:1001505,Endocrine_System_v1;Female_reproductive_v;Male_reproductive,3
+white adipocyte,CL:0000448,Endocrine_System_v1;Female_reproductive_v;Male_reproductive,3
+zona reticularis of adrenal gland,UBERON:0002055,Endocrine_System_v1;Female_reproductive_v;Male_reproductive,3
+Hepatocyte,CL:0000182,Digestive_system_v1;Endocrine_System_v1,2
+alveolus of lung,UBERON:0002299,Female_reproductive_v;Pulmonary_system_v1,2
+bone marrow,UBERON:0002371,Endocrine_System_v1;Skeletal_system_v1,2
+chief cell of parathyroid gland,CL:0000446,Endocrine_System_v1;Skeletal_system_v1,2
+endocrine system,UBERON:0000949,Endocrine_System_v1;Urinary_system_v1,2
+heart left ventricle,UBERON:0002084,Cardiovascular_system_v1;Female_reproductive_v,2
+juxtaglomerular complex cell,CL:1000618,Cardiovascular_system_v1;Endocrine_System_v1,2
+kidney afferent arteriolar cell,CL:1001006,Cardiovascular_system_v1;Endocrine_System_v1,2
+kidney insterstitium,UBERON:0005215,Endocrine_System_v1;Skeletal_system_v1,2
+lung connective tissue,UBERON:0000114,Fascia_System_v1;Pulmonary_system_v1,2
+neurohypophysis,UBERON:0002198,Endocrine_System_v1;Female_reproductive_v,2
+osteocyte,CL:0000137,Endocrine_System_v1;Skeletal_system_v1,2
+parafollicular cell,CL:0000570,Endocrine_System_v1;Skeletal_system_v1,2
+parietal cell,CL:0000162,Digestive_system_v1;Endocrine_System_v1,2
+pudendal nerve,UBERON:0011390,Female_reproductive_v;Male_reproductive,2
+pulmonary arteriole,UBERON:8600077,Cardiovascular_system_v1;Pulmonary_system_v1,2
+pulmonary capillary,UBERON:0016405,Cardiovascular_system_v1;Pulmonary_system_v1,2
+pulmonary capillary endothelial cell,CL:4028001,Cardiovascular_system_v1;Endocrine_System_v1,2
+regular atrial cardiac myocyte,CL:0002129,Cardiovascular_system_v1;Endocrine_System_v1,2
+regular ventricular cardiac myocyte,CL:0002131,Cardiovascular_system_v1;Endocrine_System_v1,2
+renal glomerulus,UBERON:0000074,Cardiovascular_system_v1;Urinary_system_v1,2
+sacral nerve plexus,UBERON:0034986,Female_reproductive_v;Male_reproductive,2
+type L enteroendocrine cell,CL:0002279,Digestive_system_v1;Endocrine_System_v1,2
+urinary bladder,UBERON:0001255,Male_reproductive;Urinary_system_v1,2
+vagal neural crest cell,CL:0011017,Digestive_system_v1;Pulmonary_system_v1,2

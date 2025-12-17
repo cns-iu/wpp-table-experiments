@@ -1,0 +1,11 @@
+﻿file,Organ_unique_count,AS_unique_count,FTU_unique_count,CT_unique_count,B_unique_count,Total_per_spatial_sum,Global_unique_across_spatials
+Cardiovascular_system_v1_spatial_temporal_table,0,5,0,6,0,11,10
+Digestive_system_v1_spatial_temporal_table,109,36,0,75,0,220,219
+Endocrine_System_v1_spatial_temporal_table,9,6,0,61,0,76,76
+Fascia_System_v1_spatial_temporal_table,13,53,0,33,0,99,93
+Female_reproductive_v_spatial_temporal_table,10,32,1,24,0,67,67
+Male_reproductive_spatial_temporal_table,3,18,0,12,0,33,33
+Muscular_system_v1_spatial_temporal_table,0,0,0,2,0,2,2
+Pulmonary_system_v1_spatial_temporal_table,126,29,3,33,0,191,191
+Skeletal_system_v1_spatial_temporal_table,0,0,0,5,0,5,5
+Urinary_system_v1_spatial_temporal_table,58,25,0,81,0,164,162

@@ -5,8 +5,8 @@ import pandas as pd
 import re
 
 # ---------- CONFIG ----------
-input_folder = "./output/temporal_spatial_output/v6/"   # folder with CSVs
-output_summary = "./output/unique_processes/process_counts5.csv"
+input_folder = "./output/temporal_spatial_output/v7/"   # folder with CSVs
+output_summary = "./output/unique_processes/process_counts6.csv"
 # output_details_dir = "./output/unique_processes/per_file_details/"  # per-file detail lists
 os.makedirs(os.path.dirname(output_summary), exist_ok=True)
 # os.makedirs(output_details_dir, exist_ok=True)
