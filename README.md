@@ -17,11 +17,11 @@ Now in HRA there are total 4955 AS entries, where organs are also considered as 
 In WPP these Organs are considered as Organs and are separated from AS 
 In below file there are total 283 Uberon entries in WPP across 9 organ systems. Also, statistics for present in WPP but missing in HRA and present in both
 
-> Total Uberon ids in WPP => 283
-> WPP intersection HRA => 164
-> Only in WPP => 119
-> Total in HRA => 4955
-> Only in HRA => 4791
+> - Total Uberon ids in WPP => 283
+> - WPP intersection HRA => 164
+> - Only in WPP => 119
+> - Total in HRA => 4955
+> - Only in HRA => 4791
 
 > Output - output\analysis\all_Uberon_statistics\ 
 
