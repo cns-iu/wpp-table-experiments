@@ -1,8 +1,0 @@
-table_name,input_file,sheet,column,matched_id,label,count
-Female reproductive,data\WPP Input Tables\Female-reproductive_v.10_DRAFT_20251110 - Sheet1.csv,,Effector/ID,UBERON:0002299,alveolus of lung,1
-Integumentary system,data\WPP Input Tables\Integumentary system_v1.0_DRAFT_20260106.xlsx - digestive-system_v1.0_DRAFT.csv,,Effector/ID,UBERON:0000412,dermal papilla,1
-Integumentary system,data\WPP Input Tables\Integumentary system_v1.0_DRAFT_20260106.xlsx - digestive-system_v1.0_DRAFT.csv,,Effector/ID,UBERON:0002073,hair follicle,10
-Integumentary system,data\WPP Input Tables\Integumentary system_v1.0_DRAFT_20260106.xlsx - digestive-system_v1.0_DRAFT.csv,,EffectorLocation/ID,UBERON:0000412,dermal papilla,6
-Integumentary system,data\WPP Input Tables\Integumentary system_v1.0_DRAFT_20260106.xlsx - digestive-system_v1.0_DRAFT.csv,,EffectorLocation/ID,UBERON:0002073,hair follicle,37
-Pulmonary system,data\WPP Input Tables\Pulmonary-system_v1.0_DRAFT_20251110.xlsx - pulmonary-system_v1.0_DRAFT.csv,,Effector/ID,UBERON:0002299,alveolus of lung,40
-Urinary system,data\WPP Input Tables\Urinary-system_v1.0_DRAFT_251115.xlsx - urinary-system_v1.0_DRAFT.csv,,EffectorLocation/ID,UBERON:0001291,thick ascending limb of loop of Henle,4

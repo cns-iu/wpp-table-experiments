@@ -73,5 +73,15 @@ We observed that some of the Anatomical structures, CT or FTUs which are present
 
 > Output - output\common_effectors_across_systems\labels_present_in_multiple_files.csv
 
+## 13 - FTUs occurring in WPP tables and the processes happening in them
+
+1. ftu_global_process_summary_1.csv
+High-level summary showing total unique process count for each FTU across all tables. Only includes FTUs from Effector/ID columns. Sorted by process count (highest to lowest) to identify FTUs involved in the most diverse set of biological processes.
+2. ftu_id_matches_summary_1.csv
+Detailed breakdown of FTU matches found in each input table. Shows which FTUs appear in which tables, their labels, and associated processes. For Effector/ID columns, includes all unique processes found in that specific table and a count of those processes. EffectorLocation/ID matches have empty process fields.
+
+> Output - output\unique_ftus\ftu_global_process_summary_1.csv
+>        - output\unique_ftus\ftu_id_matches_summary_1.csv
+
 ### Challenges
 

@@ -1,38 +1,31 @@
 #!/usr/bin/env python3
 """
-scan_ftu_ids.py
-
 Scan input tables (CSV/TSV/Excel) for a set of FTU UBERON IDs appearing in
-EffectorLocation/ID or Effector/ID columns. Capture labels and counts and
-write a summary CSV.
+EffectorLocation/ID or Effector/ID columns. 
 
-Usage:
-    python scan_ftu_ids.py
+When the column is Effector/ID, also capture the Process column and count
+unique processes per FTU ID.
 
-Edit INPUT_FOLDER and OUT_CSV below, or pass them as env/args if you prefer.
 """
-
 import os
 import re
 import glob
 import argparse
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import List, Optional
 import pandas as pd
 
-# ---------------------------
-# CONFIG (edit as needed)
-# ---------------------------
 INPUT_FOLDER = "./data/WPP Input Tables"   # folder to search (recursive)
-OUT_CSV = "./output/unique_ftus/ftu_id_matches_summary.csv"
+OUT_CSV = "./output/unique_ftus/ftu_id_matches_summary_1.csv"
+OUT_GLOBAL_SUMMARY_CSV = "./output/unique_ftus/ftu_global_process_summary_1.csv"
 RECURSIVE = True
 # Candidate ID columns to look for
 ID_COLUMN_CANDIDATES = ["EffectorLocation/ID", "Effector/ID"]
 LABEL_COLUMN_CANDIDATES = ["EffectorLocation/LABEL", "Effector/LABEL"]
+PROCESS_COLUMN_CANDIDATES = ["Process", "Process/ID"]
 # separators used when a cell contains multiple IDs in one cell
 ID_SEPARATORS_REGEX = r"[;|,]\s*"
 
-# Example FTU IDs set - replace or load dynamically as you wish
 FTU_IDS = {
     "UBERON:0004203",
     "UBERON:0001289",
@@ -66,9 +59,6 @@ FTU_IDS = {
 # Helpers
 # ---------------------------
 def derive_table_name(filepath: str) -> str:
-    """
-    Derive a table name from the filename: first two 'words' (alphanumeric + underscores).
-    """
     stem = Path(filepath).stem
     parts = re.split(r'[\W_]+', stem)
     parts = [p for p in parts if p]
@@ -77,14 +67,7 @@ def derive_table_name(filepath: str) -> str:
     return " ".join(parts[:2])
 
 def find_best_column(columns: List[str], candidates: List[str]) -> Optional[str]:
-    """
-    Return the first matching column name from `columns` for any candidate in `candidates`.
-    Matching is:
-      - exact case-sensitive match
-      - case-insensitive match
-      - column that endswith the candidate (case-insensitive)
-      - column that contains the candidate (case-insensitive)
-    """
+
     lowered = {c.lower(): c for c in columns}
     # exact / case-insensitive
     for cand in candidates:
@@ -103,9 +86,6 @@ def find_best_column(columns: List[str], candidates: List[str]) -> Optional[str]
     return None
 
 def split_ids_from_cell(cell_value) -> List[str]:
-    """
-    Given a cell value (possibly numeric or float), return a list of trimmed ID strings.
-    """
     if pd.isna(cell_value):
         return []
     s = str(cell_value).strip()
@@ -114,9 +94,6 @@ def split_ids_from_cell(cell_value) -> List[str]:
     parts = re.split(ID_SEPARATORS_REGEX, s)
     return [p.strip() for p in parts if p.strip()]
 
-# ---------------------------
-# Core scanning function
-# ---------------------------
 def scan_files(input_folder: str, ftu_ids: set, out_csv: str, recursive: bool = True):
     patterns = ["**/*.csv", "**/*.tsv", "**/*.xlsx", "**/*.xls"] if recursive else ["*.csv","*.tsv","*.xlsx","*.xls"]
     base = Path(input_folder)
@@ -154,7 +131,8 @@ def scan_files(input_folder: str, ftu_ids: set, out_csv: str, recursive: bool = 
                             "column": "ERROR",
                             "matched_id": "",
                             "label": f"Excel parse error: {e}",
-                            "row_index": ""
+                            "row_index": "",
+                            "process": ""
                         })
                         continue
                     if df.empty:
@@ -166,6 +144,7 @@ def scan_files(input_folder: str, ftu_ids: set, out_csv: str, recursive: bool = 
                 if fp.lower().endswith(".tsv"):
                     sep = '\t'
                 try:
+                    # header row set to 11 (0-indexed) to match your WPP files
                     df = pd.read_csv(fp, dtype=str, sep=sep, engine='python', header=11)
                 except Exception:
                     # fallback: try python engine without forcing sep
@@ -181,7 +160,8 @@ def scan_files(input_folder: str, ftu_ids: set, out_csv: str, recursive: bool = 
                 "column": "ERROR",
                 "matched_id": "",
                 "label": f"File-level error: {exc}",
-                "row_index": ""
+                "row_index": "",
+                "process": ""
             })
 
     if not records:
@@ -189,28 +169,96 @@ def scan_files(input_folder: str, ftu_ids: set, out_csv: str, recursive: bool = 
         # write empty CSV for consistency
         out_dir = Path(out_csv).parent
         out_dir.mkdir(parents=True, exist_ok=True)
-        pd.DataFrame(columns=["table_name","input_file","sheet","column","matched_id","label","row_index","count"]).to_csv(out_csv, index=False)
+        pd.DataFrame(columns=["table_name","column","matched_id","label","all_processes","unique_process_count_in_table","total_unique_ids_in_table"]).to_csv(out_csv, index=False)
         return pd.DataFrame()
 
     df_records = pd.DataFrame(records)
 
-    # compute counts: group by table/file/column/matched_id/label
-    summary = (df_records
-               .groupby(["table_name", "input_file", "sheet", "column", "matched_id", "label"], dropna=False)
-               .agg(count=("matched_id","size"))
-               .reset_index())
-    # write output
+    summary_parts = []
+    
+    for (table_name, column, matched_id, label), group in df_records.groupby(["table_name", "column", "matched_id", "label"], dropna=False):
+        # Get all processes for this group
+        processes = [p for p in group['process'] if pd.notna(p) and p != ""]
+        unique_processes = sorted(set(processes))
+        
+        # Check if this is an Effector/ID column
+        is_effector_id = 'effector/id' in str(column).lower()
+        
+        summary_parts.append({
+            "table_name": table_name,
+            "column": column,
+            "matched_id": matched_id,
+            "label": label,
+            "all_processes": "; ".join(unique_processes) if is_effector_id else "",
+            "unique_process_count_in_table": len(unique_processes) if is_effector_id else 0
+        })
+    
+    summary = pd.DataFrame(summary_parts)
+    
+    # compute total unique matched IDs per table_name
+    per_table_unique = (df_records.groupby("table_name")["matched_id"]
+                        .nunique()
+                        .reset_index(name="total_unique_ids_in_table"))
+
+    # merge table totals back into summary
+    summary = summary.merge(per_table_unique, on="table_name", how="left")
+    
+    # Reorder columns for better readability
+    summary = summary[["table_name", "column", "matched_id", "label", "all_processes", 
+                       "unique_process_count_in_table", "total_unique_ids_in_table"]]
+
+    # Save main summary
     out_dir = Path(out_csv).parent
     out_dir.mkdir(parents=True, exist_ok=True)
     summary.to_csv(out_csv, index=False)
     print(f"Wrote summary CSV: {out_csv}")
-    # print a quick per-file summary
-    per_file = (summary.groupby(["table_name","input_file"])
-                .agg(total_matches=("count","sum"), unique_ids=("matched_id","nunique"))
-                .reset_index()
-                .sort_values(["total_matches"], ascending=False))
-    print("\nMatches per file (top 50):")
-    print(per_file.head(50).to_string(index=False))
+    
+    # Create GLOBAL summary: unique processes per FTU across ALL tables (only for Effector/ID)
+    effector_records = df_records[df_records['column'].str.contains('Effector/ID', case=False, na=False)]
+    
+    if not effector_records.empty:
+        # Filter out empty/null processes
+        effector_with_process = effector_records[effector_records['process'].notna() & (effector_records['process'] != '')]
+        
+        # Count unique processes per FTU globally
+        global_process_counts = (effector_with_process
+                                .groupby('matched_id')['process']
+                                .nunique()
+                                .reset_index(name='unique_process_count'))
+        
+        # Get labels for each FTU (take first non-empty label)
+        ftu_labels = (effector_records
+                     .groupby('matched_id')['label']
+                     .apply(lambda x: next((l for l in x if pd.notna(l) and l != ""), ""))
+                     .reset_index(name='label'))
+        
+        # Merge labels
+        global_summary = global_process_counts.merge(ftu_labels, on='matched_id', how='left')
+        
+        # Reorder columns: matched_id, label, unique_process_count
+        global_summary = global_summary[['matched_id', 'label', 'unique_process_count']]
+        
+        # Sort by unique_process_count descending
+        global_summary = global_summary.sort_values('unique_process_count', ascending=False)
+        
+        # Save global summary
+        global_summary.to_csv(OUT_GLOBAL_SUMMARY_CSV, index=False)
+        print(f"Wrote global process summary CSV: {OUT_GLOBAL_SUMMARY_CSV}")
+        
+        print("\nUnique process count per FTU across all tables (Effector/ID):")
+        print(global_summary.to_string(index=False))
+    else:
+        print("\nNo Effector/ID matches found for global process summary.")
+
+    # print a quick per-table summary
+    if not summary.empty:
+        per_table_summary = (summary.groupby(["table_name"])
+                             .agg(unique_ids_in_table=("total_unique_ids_in_table","max"))
+                             .reset_index()
+                             .sort_values(["unique_ids_in_table"], ascending=False))
+        print("\nMatches per table (top 50):")
+        print(per_table_summary.head(50).to_string(index=False))
+    
     return summary
 
 def scan_dataframe(input_file: str, sheet: Optional[str], table_name: str, df: pd.DataFrame, ftu_ids: set, records: list):
@@ -218,13 +266,20 @@ def scan_dataframe(input_file: str, sheet: Optional[str], table_name: str, df: p
     Scan a single dataframe for matches and append to `records`.
     """
     columns = list(df.columns)
+    
+    # Find process column (if exists)
+    process_col = find_best_column(columns, PROCESS_COLUMN_CANDIDATES)
+    
     # locate id columns (we will look for both possible ID columns)
     for id_candidate in ID_COLUMN_CANDIDATES:
         id_col = find_best_column(columns, [id_candidate])
         if not id_col:
             continue
+        
+        # Check if this is an Effector/ID column
+        is_effector_id = 'effector/id' in id_col.lower()
+        
         # determine corresponding label candidate for this ID column
-        # map "EffectorLocation/ID" -> "EffectorLocation/LABEL", etc.
         corresponding_label_name = None
         # find matching label candidate that has same prefix before '/'
         if '/' in id_candidate:
@@ -256,6 +311,16 @@ def scan_dataframe(input_file: str, sheet: Optional[str], table_name: str, df: p
                             label_val = "" if pd.isna(raw) else str(raw)
                         except Exception:
                             label_val = ""
+                    
+                    # Get process value if this is Effector/ID and process column exists
+                    process_val = ""
+                    if is_effector_id and process_col and process_col in df.columns:
+                        try:
+                            raw = df.at[idx, process_col]
+                            process_val = "" if pd.isna(raw) else str(raw)
+                        except Exception:
+                            process_val = ""
+                    
                     records.append({
                         "input_file": input_file,
                         "sheet": sheet,
@@ -263,7 +328,8 @@ def scan_dataframe(input_file: str, sheet: Optional[str], table_name: str, df: p
                         "column": id_col,
                         "matched_id": found_id,
                         "label": label_val,
-                        "row_index": idx
+                        "row_index": idx,
+                        "process": process_val
                     })
 
 # ---------------------------
