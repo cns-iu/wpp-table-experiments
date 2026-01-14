@@ -5,6 +5,7 @@ stem cell,CL:0000034
 hematopoietic stem cell,CL:0000037
 mature basophil,CL:0000043
 fibroblast,CL:0000057
+odontoblast,CL:0000060
 osteoblast,CL:0000062
 epithelial cell,CL:0000066
 ciliated epithelial cell,CL:0000067
@@ -38,8 +39,8 @@ pancreatic A cell,CL:0000171
 pancreatic D cell,CL:0000173
 luteal cell,CL:0000175
 Leydig cell,CL:0000178
-Hepatocytes,CL:0000182
 Hepatocyte,CL:0000182
+Hepatocytes,CL:0000182
 hepatocyte,CL:0000182
 myofibroblast cell,CL:0000186
 smooth muscle cell,CL:0000192
@@ -116,8 +117,8 @@ CD4-negative CD8-negative gamma-delta intraepithelial T cell,CL:0000803
 DN2 thymocyte,CL:0000806
 DN4 thymocyte,CL:0000808
 "double-positive, alpha-beta thymocyte",CL:0000809
-Effector Memory T cells,CL:0000813
 memory T cell,CL:0000813
+Effector Memory T cells,CL:0000813
 mature NK T cell,CL:0000814
 immature B cell,CL:0000816
 precursor B cell,CL:0000817

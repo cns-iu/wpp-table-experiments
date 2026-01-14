@@ -70,6 +70,7 @@ epithelial cell,CL:0000066
 epithelium,UBERON:0000483
 external intercostal muscle,UBERON:0005441
 external jugular vein,UBERON:0001101
+facial nerve,UBERON:0001647
 fascia,UBERON:0008982
 femoral artery,UBERON:0002060
 femoral vein,UBERON:0001361
@@ -78,6 +79,7 @@ fimbriae of fallopian tube,UBERON:8410010
 gastroduodenal artery,UBERON:0010132
 glandular epithelium,UBERON:0006799
 glomerular capillary,CL:0004212
+glossopharyngeal nerve,UBERON:0001649
 goblet cell,CL:0000160
 granulation tissue,UBERON:0010211
 hair follicle,UBERON:0002073
@@ -138,6 +140,7 @@ male urethral meatus,UBERON:0012241
 mammary gland,UBERON:0001911
 mammary gland connective tissue,UBERON:0003584
 mammary gland smooth muscle,UBERON:0004235
+mandible,UBERON:0001684
 mesenchymal stem cell of apical papilla,CL:4040005
 middle colic artery,UBERON:0001196
 middle colic vein,UBERON:0001218
@@ -156,6 +159,7 @@ pain receptor cell,CL:0000198
 papillary layer of dermis,UBERON:0001992
 parasympathetic nerve,UBERON:0004293
 parietal cell,CL:0000162
+parotid gland,UBERON:0001831
 perineal artery,UBERON:0001358
 perineal muscle,UBERON:0002379
 perineal vein,UBERON:0001362
@@ -200,6 +204,7 @@ right renal vein,UBERON:0001141
 right subclavian artery,UBERON:0001534
 sacral nerve plexus,UBERON:0034986
 sagittal sinus,UBERON:0015704
+saliva-secreting gland,UBERON:0001044
 sartorius muscle,UBERON:0001374
 sebaceous gland,UBERON:0001821
 sebum,UBERON:0001866
@@ -221,6 +226,8 @@ stem cell,CL:0000034
 stratified squamous epithelium,UBERON:0006915
 stratum compactum of dermis,UBERON:0007377
 subclavian vein,UBERON:0001587
+sublingual gland,UBERON:0001832
+submandibular gland,UBERON:0001736
 superficial cervical fascia,UBERON:0013489
 superficial fascia,UBERON:0011818
 superficial lymphatic vessel,UBERON:0035198

@@ -17,11 +17,11 @@ Now in HRA there are total 4955 AS entries, where organs are also considered as 
 In WPP these Organs are considered as Organs and are separated from AS 
 In below file there are total 283 Uberon entries in WPP across 9 organ systems. Also, statistics for present in WPP but missing in HRA and present in both
 
-> - Total Uberon ids in WPP => 290
-> - WPP intersection HRA => 167
+> - Total Uberon ids in WPP => 299
+> - WPP intersection HRA => 176
 > - Only in WPP => 123
-> - Total in HRA => 1805
-> - Only in HRA => 1638
+> - Total in HRA => 1837
+> - Only in HRA => 1661
 
 > Output - output\analysis\all_Uberon_statistics\ 
 
@@ -31,9 +31,9 @@ Similarly, for CT the statistics are in files as total CT, present in WPP but mi
 
  === SUMMARY For CT in WPP and HRA===
 
-> - Total CL IDs checked: 332
-> - Present in ASTCB: 117
-> - Missing in ASTCB: 215
+> - Total CL IDs checked: 333
+> - Present in ASTCB: 120
+> - Missing in ASTCB: 213
 
 
 > Output - output/analysis/all_CT_statistics
@@ -81,6 +81,7 @@ High-level summary showing total unique process count for each FTU across all ta
 Detailed breakdown of FTU matches found in each input table. Shows which FTUs appear in which tables, their labels, and associated processes. For Effector/ID columns, includes all unique processes found in that specific table and a count of those processes. EffectorLocation/ID matches have empty process fields.
 
 > Output - output\unique_ftus\ftu_global_process_summary_1.csv
+
 >        - output\unique_ftus\ftu_id_matches_summary_1.csv
 
 ### Challenges

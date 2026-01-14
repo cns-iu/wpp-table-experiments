@@ -2,6 +2,7 @@ CL_LABELS,CL_IDs
 sperm,CL:0000019
 oocyte,CL:0000023
 mature basophil,CL:0000043
+odontoblast,CL:0000060
 osteoblast,CL:0000062
 ciliated epithelial cell,CL:0000067
 blood cell,CL:0000081
@@ -41,7 +42,6 @@ collagen secreting cell,CL:0000667
 centripetally migrating follicle cell,CL:0000671
 Cajal-Retzius cell,CL:0000695
 PP cell,CL:0000696
-dopaminergic neuron,CL:0000700
 somatic stem cell,CL:0000723
 urothelial cell,CL:0000731
 striated muscle cell,CL:0000737
@@ -54,7 +54,7 @@ mature B cell,CL:0000785
 CD4-negative CD8-negative gamma-delta intraepithelial T cell,CL:0000803
 DN2 thymocyte,CL:0000806
 DN4 thymocyte,CL:0000808
-Effector Memory T cells,CL:0000813
+memory T cell,CL:0000813
 B-1 B cell,CL:0000819
 B-1a B cell,CL:0000820
 B-2 B cell,CL:0000822
@@ -89,7 +89,6 @@ early pro-B cell,CL:0002046
 late pro-B cell,CL:0002048
 fraction F mature B cell,CL:0002056
 T-helper 9 cell,CL:0002061
-nodal myocyte,CL:0002072
 tanycyte,CL:0002085
 bone marrow cell,CL:0002092
 CD27-negative gamma-delta T cell,CL:0002125
@@ -187,7 +186,6 @@ decidual cell,CL:2000002
 dermis blood vessel endothelial cell,CL:2000010
 dermis lymphatic vessel endothelial cell,CL:2000011
 sebaceous gland cell,CL:2000021
-central nervous system neuron,CL:2000029
 hypothalamus cell,CL:2000030
 liver dendritic cell,CL:2000055
 placental villous trophoblast,CL:2000060

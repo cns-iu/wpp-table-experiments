@@ -15,7 +15,7 @@ type B cell of pancreas,CL:0000169
 pancreatic A cell,CL:0000171
 pancreatic D cell,CL:0000173
 luteal cell,CL:0000175
-Hepatocytes,CL:0000182
+Hepatocyte,CL:0000182
 myofibroblast cell,CL:0000186
 smooth muscle cell,CL:0000192
 erythrocyte,CL:0000232
@@ -46,6 +46,7 @@ spinous cell of epidermis,CL:0000649
 podocyte,CL:0000653
 pericyte,CL:0000669
 M cell of gut,CL:0000682
+dopaminergic neuron,CL:0000700
 leukocyte,CL:0000738
 cardiac muscle cell,CL:0000746
 erythroid lineage cell,CL:0000764
@@ -83,6 +84,7 @@ T follicular helper cell,CL:0002038
 pulmonary alveolar type 2 cell,CL:0002063
 pancreatic acinar cell,CL:0002064
 enterocyte of epithelium of large intestine,CL:0002071
+nodal myocyte,CL:0002072
 interstitial cell of Cajal,CL:0002088
 stromal cell of endometrium,CL:0002255
 type I cell of carotid body,CL:0002292
@@ -112,6 +114,7 @@ kidney loop of Henle thick ascending limb epithelial cell,CL:1001106
 kidney loop of Henle thin ascending limb epithelial cell,CL:1001107
 kidney collecting duct principal cell,CL:1001431
 pancreas exocrine glandular cell,CL:1001599
+central nervous system neuron,CL:2000029
 splenic endothelial cell,CL:2000053
 kidney loop of Henle short descending thin limb epithelial cell,CL:4030012
 "lung resident memory CD8-positive, alpha-beta T cell",CL:4033039

@@ -1,14 +1,19 @@
 ﻿Effector/LABEL,Effector/ID(s),Files,Count_files
 smooth muscle cell,CL:0000192,Cardiovascular_system_v1;Digestive_system_v1;Endocrine_System_v1;Integumentary_system_v1;Muscular_system_v1;Pulmonary_system_v1,6
+kidney proximal convoluted tubule epithelial cell,CL:1000838,Cardiovascular_system_v1;Dental_and;Endocrine_System_v1;Skeletal_system_v1;Urinary_system_v1,5
+osteoblast,CL:0000062,Dental_and;Endocrine_System_v1;Integumentary_system_v1;Male_reproductive;Skeletal_system_v1,5
 endothelial cell,CL:0000115,Cardiovascular_system_v1;Endocrine_System_v1;Fascia_System_v1;Integumentary_system_v1,4
-kidney proximal convoluted tubule epithelial cell,CL:1000838,Cardiovascular_system_v1;Endocrine_System_v1;Skeletal_system_v1;Urinary_system_v1,4
-osteoblast,CL:0000062,Endocrine_System_v1;Integumentary_system_v1;Male_reproductive;Skeletal_system_v1,4
+kidney distal convoluted tubule epithelial cell,CL:1000849,Dental_and;Endocrine_System_v1;Skeletal_system_v1;Urinary_system_v1,4
+osteoclast,CL:0000092,Dental_and;Endocrine_System_v1;Male_reproductive;Skeletal_system_v1,4
 skeletal muscle fiber,CL:0008002,Endocrine_System_v1;Female_reproductive_v;Male_reproductive;Muscular_system_v1,4
 adenohypophysis,UBERON:0002196,Endocrine_System_v1;Female_reproductive_v;Male_reproductive,3
 autonomic neuron,CL:0000107,Immune_and;Integumentary_system_v1;Muscular_system_v1,3
+bone marrow,UBERON:0002371,Dental_and;Endocrine_System_v1;Skeletal_system_v1,3
+chief cell of parathyroid gland,CL:0000446,Dental_and;Endocrine_System_v1;Skeletal_system_v1,3
 fibroblast of dermis,CL:0002551,Endocrine_System_v1;Female_reproductive_v;Male_reproductive,3
-kidney distal convoluted tubule epithelial cell,CL:1000849,Endocrine_System_v1;Skeletal_system_v1;Urinary_system_v1,3
-osteoclast,CL:0000092,Endocrine_System_v1;Male_reproductive;Skeletal_system_v1,3
+kidney insterstitium,UBERON:0005215,Dental_and;Endocrine_System_v1;Skeletal_system_v1,3
+osteocyte,CL:0000137,Dental_and;Endocrine_System_v1;Skeletal_system_v1,3
+parafollicular cell,CL:0000570,Dental_and;Endocrine_System_v1;Skeletal_system_v1,3
 parvocellular neurosecretory cell,CL:1001505,Endocrine_System_v1;Female_reproductive_v;Male_reproductive,3
 white adipocyte,CL:0000448,Endocrine_System_v1;Female_reproductive_v;Male_reproductive,3
 zona reticularis of adrenal gland,UBERON:0002055,Endocrine_System_v1;Female_reproductive_v;Male_reproductive,3
@@ -21,8 +26,7 @@ T cell,CL:0000084,Immune_and;Integumentary_system_v1,2
 T-helper 17 cell,CL:0000899,Immune_and;Integumentary_system_v1,2
 alveolar macrophage,CL:0000583,Fascia_System_v1;Immune_and,2
 alveolus of lung,UBERON:0002299,Female_reproductive_v;Pulmonary_system_v1,2
-bone marrow,UBERON:0002371,Endocrine_System_v1;Skeletal_system_v1,2
-chief cell of parathyroid gland,CL:0000446,Endocrine_System_v1;Skeletal_system_v1,2
+bone tissue,UBERON:0002481,Dental_and;Skeletal_system_v1,2
 connective tissue,UBERON:0002384,Fascia_System_v1;Immune_and,2
 connective tissue cell,CL:0002320,Fascia_System_v1;Integumentary_system_v1,2
 dermis lymphatic vessel endothelial cell,CL:2000011,Immune_and;Integumentary_system_v1,2
@@ -34,7 +38,6 @@ immature NK T cell,CL:0000914,Immune_and;Integumentary_system_v1,2
 juxtaglomerular complex cell,CL:1000618,Cardiovascular_system_v1;Endocrine_System_v1,2
 keratinocyte,CL:0000312,Immune_and;Integumentary_system_v1,2
 kidney afferent arteriolar cell,CL:1001006,Cardiovascular_system_v1;Endocrine_System_v1,2
-kidney insterstitium,UBERON:0005215,Endocrine_System_v1;Skeletal_system_v1,2
 liver dendritic cell,CL:2000055,Digestive_system_v1;Immune_and,2
 lung connective tissue,UBERON:0000114,Fascia_System_v1;Pulmonary_system_v1,2
 macrophage,CL:0000235,Fascia_System_v1;Immune_and,2
@@ -43,9 +46,8 @@ mesenchymal stem cell,CL:0000134,Immune_and;Integumentary_system_v1,2
 mucosal type mast cell,CL:0000485,Immune_and;Integumentary_system_v1,2
 nasopharyngeal epithelial cell,CL:1001573,Immune_and;Integumentary_system_v1,2
 neurohypophysis,UBERON:0002198,Endocrine_System_v1;Female_reproductive_v,2
-osteocyte,CL:0000137,Endocrine_System_v1;Skeletal_system_v1,2
-parafollicular cell,CL:0000570,Endocrine_System_v1;Skeletal_system_v1,2
 parietal cell,CL:0000162,Digestive_system_v1;Endocrine_System_v1,2
+proximal convoluted tubule,UBERON:0001287,Dental_and;Skeletal_system_v1,2
 pudendal nerve,UBERON:0011390,Female_reproductive_v;Male_reproductive,2
 pulmonary alveolar type 2 cell,CL:0002063,Immune_and;Pulmonary_system_v1,2
 pulmonary arteriole,UBERON:8600077,Cardiovascular_system_v1;Pulmonary_system_v1,2
@@ -60,6 +62,8 @@ spinal cord,UBERON:0002240,Integumentary_system_v1;Pulmonary_system_v1,2
 spinous cell of epidermis,CL:0000649,Immune_and;Integumentary_system_v1,2
 stem cell,CL:0000034,Digestive_system_v1;Integumentary_system_v1,2
 sympathetic neuron,CL:0011103,Fascia_System_v1;Immune_and,2
+thoracic nerve,UBERON:0003726,Cardiovascular_system_v1;Nervous_system_v1,2
 type L enteroendocrine cell,CL:0002279,Digestive_system_v1;Endocrine_System_v1,2
 urinary bladder,UBERON:0001255,Male_reproductive;Urinary_system_v1,2
 vagal neural crest cell,CL:0011017,Digestive_system_v1;Pulmonary_system_v1,2
+vagus nerve,UBERON:0001759,Cardiovascular_system_v1;Nervous_system_v1,2

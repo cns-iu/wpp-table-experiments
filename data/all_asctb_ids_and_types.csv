@@ -1590,6 +1590,116 @@ allen_brain,HGNC:2047,B (gene),CLDN5
 allen_brain,PCL:0015126,CT,VLMC L1-5 PDGFRA COLEC12
 allen_brain,HGNC:16016,B (gene),COLEC12
 allen_brain,PCL:0015127,CT,Micro L1-6 TYROBP CD74
+allen_brain,CL:1001474,CT,Medium spiny neuron
+allen_brain,CL:4030043,CT,D1 Matrix MSN
+allen_brain,CL:4030048,CT,D1 Striosome MSN
+allen_brain,ASCTB-TEMP:ac011246-1,B (gene),AC011246.1
+allen_brain,CL:4030047,CT,D2 Matrix MSN
+allen_brain,CL:4030049,CT,D2 Striosome MSN
+allen_brain,ASCTB-TEMP:al353604-1,B (gene),AL353604.1
+allen_brain,ASCTB-TEMP:al139379-1,B (gene),AL139379.1
+allen_brain,ASCTB-TEMP:al138701-2,B (gene),AL138701.2
+allen_brain,CL:4030051,CT,STRv D1 MSN
+allen_brain,HGNC:52774,B (gene),LINC01951
+allen_brain,HGNC:2418,B (gene),CRYM
+allen_brain,ASCTB-TEMP:ac008574-1,B (gene),AC008574.1
+allen_brain,CL:4030052,CT,STRv D2 MSN
+allen_brain,HGNC:10978,B (gene),SLC24A4
+allen_brain,CL:4023035,CT,D2 StrioMat Hybrid MSN
+allen_brain,ASCTB-TEMP:ac132153-1,B (gene),AC132153.1
+allen_brain,UBERON:0002894,AS,olfactory cortex
+allen_brain,UBERON:0001883,AS,olfactory tubercle
+allen_brain,CL:4030050,CT,D1D2 Hybrid MSN
+allen_brain,ASCTB-TEMP:extended-amygdala,AS,extended amygdala
+allen_brain,CL:4030054,CT,D1 NUDAP MSN
+allen_brain,CL:2000029,CT,central nervous system neuron
+allen_brain,CL:4030053,CT,D1 ICj
+allen_brain,UBERON:0001894,AS,diencephalon
+allen_brain,CL:4023035,CT,GPe MEIS2-SOX6
+allen_brain,HGNC:23476,B (gene),DOCK5
+allen_brain,CL:0011005,CT,GABAergic interneuron
+allen_brain,CL:0011005,CT,AMY-SLEA-BNST GABA
+allen_brain,HGNC:21397,B (gene),SCML4
+allen_brain,HGNC:2151,B (gene),CNGB1
+allen_brain,HGNC:8004,B (gene),NRP1
+allen_brain,CL:0011005,CT,AMY-SLEA-BNST D1
+allen_brain,HGNC:346,B (gene),AHRR
+allen_brain,ASCTB-TEMP:al353576-1,B (gene),AL353576.1
+allen_brain,HGNC:2188,B (gene),COL12A1
+allen_brain,CL:0011005,CT,SN SEMA5A
+allen_brain,HGNC:8621,B (gene),PAX7
+allen_brain,CL:0011005,CT,SN EBF2
+allen_brain,CL:0000617,CT,OB FRMD7
+allen_brain,ASCTB-TEMP:ac087564-1,B (gene),AC087564.1
+allen_brain,CL:0000617,CT,OB Dopa-GABA
+allen_brain,HGNC:4407,B (gene),GNG4
+allen_brain,HGNC:53092,B (gene),LINC02223
+allen_brain,CL:0011005,CT,GPi Shell
+allen_brain,ASCTB-TEMP:linc01799,B (gene),LINC01799
+allen_brain,HGNC:11590,B (gene),TBR1
+allen_brain,CL:0011005,CT,GPi Core
+allen_brain,CL:0000617,CT,SN GATA3-PVALB
+allen_brain,HGNC:49081,B (gene),LINC01060
+allen_brain,HGNC:49633,B (gene),LINC01202
+allen_brain,HGNC:51108,B (gene),GATA2-AS1
+allen_brain,CL:0000617,CT,GPe SOX6-CTXND1
+allen_brain,HGNC:49382,B (gene),FGF10-AS1
+allen_brain,ASCTB-TEMP:c5orf64,B (gene),C5orf64
+allen_brain,CL:0011005,CT,ZI-HTH GABA
+allen_brain,HGNC:19119,B (gene),SLC5A8
+allen_brain,HGNC:44165,B (gene),ZFHX4-AS1
+allen_brain,HGNC:26504,B (gene),AGBL1
+allen_brain,HGNC:20358,B (gene),LINC02691
+allen_brain,CL:0011005,CT,GATA3-TCF7L2
+allen_brain,HGNC:53778,B (gene),LHX1-DT
+allen_brain,UBERON:0002420,AS,basal ganglion
+allen_brain,UBERON:0002435,AS,striatum
+allen_brain,CL:0011005,CT,SN GATA3-PAX8
+allen_brain,CL:0011005,CT,LHX6-LHX8-GBX1
+allen_brain,HGNC:4185,B (gene),GBX1
+allen_brain,HGNC:33154,B (gene),ELFN1
+allen_brain,CL:4023016,CT,VIP
+allen_brain,ASCTB-TEMP:ac013265-1,B (gene),AC013265.1
+allen_brain,CL:4023011,CT,LAMP5-CXCL14
+allen_brain,ASCTB-TEMP:linc00298,B (gene),LINC00298
+allen_brain,CL:4023121,CT,SST-CHODL
+allen_brain,CL:4023017,CT,SST-RSPO2
+allen_brain,CL:0011005,CT,LYPD6-RSPO2
+allen_brain,HGNC:28583,B (gene),RSPO2
+allen_brain,CL:4023017,CT,SST-ADARB2
+allen_brain,HGNC:7973,B (gene),NR2E1
+allen_brain,HGNC:12784,B (gene),WNT5A
+allen_brain,UBERON:0005382,AS,dorsal striatum
+allen_brain,CL:4042013,CT,LAMP5-LHX6
+allen_brain,CL:4042023,CT,PTHLH-PVALB
+allen_brain,CL:4042001,CT,TAC3-PLPP4
+allen_brain,CL:4042001,CT,TAC3-PLPP4-LHX8
+allen_brain,ASCTB-TEMP:ac046195-2,B (gene),AC046195.2
+allen_brain,HGNC:32395,B (gene),DGKK
+allen_brain,CL:0000108,CT,cholinergic neuron
+allen_brain,CL:0011005,CT,GPin-BF Chol
+allen_brain,HGNC:26663,B (gene),CNBD1
+allen_brain,CL:0011005,CT,STR Chol
+allen_brain,UBERON:0005403,AS,ventral striatum
+allen_brain,CL:0011005,CT,STRd Chol
+allen_brain,HGNC:27023,B (gene),COL6A6
+allen_brain,HGNC:18319,B (gene),PRIMA1
+allen_brain,CL:2000097,CT,midbrain dopaminergic neuron
+allen_brain,CL:0000700,CT,GAD2 Dopa
+allen_brain,CL:4042025,CT,SOX6 Dopa
+allen_brain,HGNC:10935,B (gene),SLC18A2
+allen_brain,HGNC:52777,B (gene),LINC01956
+allen_brain,CL:0000700,CT,CALB1 Dopa
+allen_brain,HGNC:10934,B (gene),SLC18A1
+allen_brain,HGNC:13441,B (gene),SCUBE1
+allen_brain,CL:4042040,CT,BF SKOR1 Glut
+allen_brain,HGNC:241,B (gene),ADCYAP1
+allen_brain,CL:4042040,CT,VTR-HTH Glut
+allen_brain,ASCTB-TEMP:ap000829-1,B (gene),AP000829.1
+allen_brain,HGNC:16703,B (gene),SLC17A6
+allen_brain,ASCTB-TEMP:ac110023-1,B (gene),AC110023.1
+allen_brain,CL:4042023,CT,PVALB-PITX2 Glut
+allen_brain,HGNC:14288,B (gene),NTNG2
 anatomical_systems,UBERON:0000467,AS,anatomical system
 anatomical_systems,UBERON:0004535,AS,cardiovascular system
 anatomical_systems,UBERON:0015410,AS,heart plus pericardium
@@ -1969,19 +2079,38 @@ blood_vasculature,ASCTB-TEMP:inferior-pharyngeal-artery,AS,inferior pharyngeal a
 blood_vasculature,ASCTB-TEMP:middle-pharyngeal-artery,AS,middle pharyngeal artery
 blood_vasculature,ASCTB-TEMP:superior-pharyngeal-artery,AS,superior pharyngeal artery
 blood_vasculature,ASCTB-TEMP:pterygovaginal-artery,AS,pterygovaginal artery
+blood_vasculature,FMA:79211,AS,tonsillar branch of ascending pharyngeal artery
 blood_vasculature,UBERON:0001612,AS,facial artery
 blood_vasculature,UBERON:0010408,AS,angular artery
 blood_vasculature,UBERON:8600095,AS,ascending palatine artery
+blood_vasculature,ASCTB-TEMP:palatine-tonsil-arteriole,AS,palatine tonsil arteriole
+blood_vasculature,CL:1000412,CT,endothelial cell of arteriole
+blood_vasculature,ASCTB-TEMP:palatine-tonsil-capillary,AS,palatine tonsil capillary
 blood_vasculature,FMA:71675,AS,glandular branches of facial artery
+blood_vasculature,ASCTB-TEMP:submandibular-gland-arteriole,AS,submandibular gland arteriole
+blood_vasculature,ASCTB-TEMP:submandibular-gland-capillary,AS,submandibular gland capillary
 blood_vasculature,UBERON:0003471,AS,inferior labial artery
+blood_vasculature,ASCTB-TEMP:inferior-labial-gland-arteriole,AS,inferior labial gland arteriole
+blood_vasculature,ASCTB-TEMP:inferior-labial-gland-capillary,AS,inferior labial gland capillary
 blood_vasculature,FMA:49580,AS,lateral nasal artery
 blood_vasculature,UBERON:8600096,AS,submental artery
+blood_vasculature,ASCTB-TEMP:submandibular-gland-branch-of-submental-artery,AS,submandibular gland branch of submental artery
 blood_vasculature,UBERON:0003470,AS,superior labial artery
+blood_vasculature,ASCTB-TEMP:superior-labial-gland-arteriole,AS,superior labial gland arteriole
+blood_vasculature,ASCTB-TEMP:superior-labial-gland-capillary,AS,superior labial gland capillary
 blood_vasculature,FMA:49558,AS,tonsillar branch of facial artery
 blood_vasculature,UBERON:0001610,AS,lingual artery
 blood_vasculature,UBERON:8600097,AS,deep lingual artery
+blood_vasculature,ASCTB-TEMP:anterior-lingual-gland-arteriole,AS,anterior lingual gland arteriole
+blood_vasculature,ASCTB-TEMP:anterior-lingual-gland-capillary,AS,anterior lingual gland capillary
 blood_vasculature,UBERON:8600098,AS,dorsal lingual artery
+blood_vasculature,ASCTB-TEMP:weber-s-gland-arteriole,AS,Weber's gland arteriole
+blood_vasculature,ASCTB-TEMP:weber-s-gland-capillary,AS,Weber's gland capillary
 blood_vasculature,UBERON:0001611,AS,sublingual artery
+blood_vasculature,ASCTB-TEMP:sublingual-gland-arteriole,AS,sublingual gland arteriole
+blood_vasculature,ASCTB-TEMP:sublingual-gland-capillary,AS,sublingual gland capillary
+blood_vasculature,ASCTB-TEMP:tongue-arteriole,AS,tongue arteriole
+blood_vasculature,ASCTB-TEMP:tongue-capillary,AS,tongue capillary
 blood_vasculature,UBERON:0001616,AS,maxillary artery
 blood_vasculature,UBERON:8600099,AS,accessory meningeal artery
 blood_vasculature,UBERON:0009654,AS,alveolar artery
@@ -1989,13 +2118,28 @@ blood_vasculature,FMA:49745,AS,anterior deep temporal artery
 blood_vasculature,FMA:49692,AS,anterior tympanic artery
 blood_vasculature,UBERON:8600100,AS,artery of pterygoid canal
 blood_vasculature,UBERON:0001618,AS,buccal artery
+blood_vasculature,ASCTB-TEMP:buccal-mucosa-arteriole,AS,buccal mucosa arteriole
+blood_vasculature,ASCTB-TEMP:buccal-mucosa-capillary,AS,buccal mucosa capillary
 blood_vasculature,UBERON:0014695,AS,deep auricular artery
+blood_vasculature,ASCTB-TEMP:deep-parotid-gland-arteriole,AS,deep parotid gland arteriole
+blood_vasculature,ASCTB-TEMP:deep-parotid-gland-capillary,AS,deep parotid gland capillary
 blood_vasculature,UBERON:8600101,AS,descending palatine artery
 blood_vasculature,UBERON:0006664,AS,greater palatine artery
+blood_vasculature,ASCTB-TEMP:palatine-gland-arteriole,AS,palatine gland arteriole
+blood_vasculature,ASCTB-TEMP:palatine-gland-capillary,AS,palatine gland capillary
 blood_vasculature,FMA:49796,AS,lesser palatine artery
 blood_vasculature,UBERON:0014693,AS,inferior alveolar artery
+blood_vasculature,FMA:49699,AS,dental branch of inferior alveolar artery
+blood_vasculature,ASCTB-TEMP:periodontal-ligament-arteriole,AS,periodontal ligament arteriole
 blood_vasculature,UBERON:8600086,AS,incisor artery
+blood_vasculature,ASCTB-TEMP:interdental-septa-arteriole,AS,interdental septa arteriole
+blood_vasculature,ASCTB-TEMP:lingual-branch-of-inferior-alveolar-artery,AS,lingual branch of inferior alveolar artery
+blood_vasculature,ASCTB-TEMP:mandibular-pulp-arteriole,AS,mandibular pulp arteriole
+blood_vasculature,ASCTB-TEMP:mandibular-pulp-capillary,AS,mandibular pulp capillary
 blood_vasculature,UBERON:0001617,AS,mental artery
+blood_vasculature,FMA:49702,AS,mylohyoid artery
+blood_vasculature,ASCTB-TEMP:supraperiosteal-arteriole,AS,supraperiosteal arteriole
+blood_vasculature,ASCTB-TEMP:inferior-gingival-plexus,AS,inferior gingival plexus
 blood_vasculature,UBERON:0004646,AS,infraorbital artery
 blood_vasculature,FMA:49771,AS,anterior superior alveolar artery
 blood_vasculature,UBERON:0013648,AS,masseteric artery
@@ -2003,6 +2147,11 @@ blood_vasculature,UBERON:0010250,AS,middle meningeal artery
 blood_vasculature,FMA:0327481,AS,pharyngeal branch of maxillary artery
 blood_vasculature,FMA:49746,AS,posterior deep temporal artery
 blood_vasculature,UBERON:0018397,AS,posterior superior alveolar artery
+blood_vasculature,ASCTB-TEMP:alveolar-mucosa-arteriole,AS,alveolar mucosa arteriole
+blood_vasculature,ASCTB-TEMP:alveolar-mucosa-capillary,AS,alveolar mucosa capillary
+blood_vasculature,ASCTB-TEMP:maxillary-pulp-arteriole,AS,maxillary pulp arteriole
+blood_vasculature,ASCTB-TEMP:maxillary-pulp-capillary,AS,maxillary pulp capillary
+blood_vasculature,ASCTB-TEMP:superior-gingival-plexus,AS,superior gingival plexus
 blood_vasculature,FMA:49751,AS,pterygoid branches of maxillary artery
 blood_vasculature,FMA:49804,AS,sphenopalatine artery
 blood_vasculature,ASCTB-TEMP:posterior-lateral-nasal-branch-of-sphenopalatine-artery,AS,posterior lateral nasal branch of sphenopalatine artery
@@ -2027,6 +2176,8 @@ blood_vasculature,FMA:49660,AS,anterior auricular branch of superficial temporal
 blood_vasculature,FMA:49669,AS,frontal branch of superficial temporal artery
 blood_vasculature,UBERON:0035042,AS,middle temporal artery
 blood_vasculature,UBERON:0035261,AS,posterior temporal artery
+blood_vasculature,ASCTB-TEMP:superior-parotid-gland-arteriole,AS,superior parotid gland arteriole
+blood_vasculature,ASCTB-TEMP:superior-parotid-gland-capillary,AS,superior parotid gland capillary
 blood_vasculature,UBERON:0001615,AS,transverse facial artery
 blood_vasculature,UBERON:0015157,AS,zygomatico-orbital artery
 blood_vasculature,UBERON:0007150,AS,superior thyroid artery
@@ -2120,7 +2271,6 @@ blood_vasculature,FMA:70450,AS,medial inferior segmental hepatic artery
 blood_vasculature,FMA:70449,AS,medial superior segmental hepatic artery
 blood_vasculature,ASCTB-TEMP:segmental-hepatic-artery,AS,segmental hepatic artery
 blood_vasculature,ASCTB-TEMP:hepatic-arteriole,AS,hepatic arteriole
-blood_vasculature,CL:1000412,CT,endothelial cell of arteriole
 blood_vasculature,UBERON:0015482,AS,right hepatic artery
 blood_vasculature,FMA:14835,AS,cystic artery
 blood_vasculature,ASCTB-TEMP:right-anterior-hepatic-artery,AS,right anterior hepatic artery
@@ -2495,6 +2645,8 @@ blood_vasculature,ASCTB-TEMP:dorsal-branch-of-medial-proper-palmar-digital-arter
 blood_vasculature,FMA:85108,AS,medial proper palmar digital artery of fifth digit of hand
 blood_vasculature,ASCTB-TEMP:cutaneous-branch-of-medial-proper-palmar-digital-artery-of-fifth-digit-of-hand,AS,cutaneous branch of medial proper palmar digital artery of fifth digit of hand
 blood_vasculature,ASCTB-TEMP:cutaneous-arteriole,AS,cutaneous arteriole
+blood_vasculature,ASCTB-TEMP:deep-cutaneous-plexus,AS,deep cutaneous plexus
+blood_vasculature,ASCTB-TEMP:branch-of-deep-cutaneous-plexus,AS,branch of deep cutaneous plexus
 blood_vasculature,FMA:280962,AS,subpapillary plexus
 blood_vasculature,ASCTB-TEMP:branch-of-subpapillary-plexus,AS,branch of subpapillary plexus
 blood_vasculature,ASCTB-TEMP:dorsal-branch-of-medial-proper-palmar-digital-artery-of-fifth-digit-of-hand,AS,dorsal branch of medial proper palmar digital artery of fifth digit of hand
@@ -2844,13 +2996,24 @@ blood_vasculature,UBERON:0001586,AS,internal jugular vein
 blood_vasculature,ASCTB-TEMP:common-facial-vein,AS,common facial vein
 blood_vasculature,ASCTB-TEMP:anterior-branch-of-retromandibular-vein,AS,anterior branch of retromandibular vein
 blood_vasculature,UBERON:0001656,AS,retromandibular vein
+blood_vasculature,ASCTB-TEMP:deep-parotid-gland-venule,AS,deep parotid gland venule
 blood_vasculature,UBERON:0001660,AS,maxillary vein
 blood_vasculature,UBERON:0014685,AS,pterygoid venous plexus
+blood_vasculature,FMA:312254,AS,buccal vein
 blood_vasculature,UBERON:0001661,AS,deep temporal vein
+blood_vasculature,ASCTB-TEMP:inferior-alveolar-vein,AS,inferior alveolar vein
+blood_vasculature,ASCTB-TEMP:inferior-gingiva-venule,AS,inferior gingiva venule
+blood_vasculature,ASCTB-TEMP:mandibular-pulp-venule,AS,mandibular pulp venule
 blood_vasculature,ASCTB-TEMP:infraorbital-vein,AS,infraorbital vein
+blood_vasculature,ASCTB-TEMP:palatine-vein,AS,palatine vein
+blood_vasculature,ASCTB-TEMP:palatine-gland-venule,AS,palatine gland venule
+blood_vasculature,ASCTB-TEMP:posterior-superior-alveolar-vein,AS,posterior superior alveolar vein
+blood_vasculature,ASCTB-TEMP:alveolar-mucosa-venule,AS,alveolar mucosa venule
+blood_vasculature,ASCTB-TEMP:maxillary-pulp-venule,AS,maxillary pulp venule
 blood_vasculature,UBERON:0001658,AS,middle temporal vein
 blood_vasculature,UBERON:0001657,AS,superficial temporal vein
 blood_vasculature,UBERON:0001659,AS,transverse facial vein
+blood_vasculature,ASCTB-TEMP:superior-parotid-gland-venule,AS,superior parotid gland venule
 blood_vasculature,UBERON:0001659,AS,transverse facial vein #2
 blood_vasculature,UBERON:0001653,AS,facial vein
 blood_vasculature,UBERON:0014686,AS,angular vein
@@ -2862,10 +3025,12 @@ blood_vasculature,UBERON:8600088,AS,supratrochlear vein
 blood_vasculature,UBERON:8600089,AS,transverse nasal root vein
 blood_vasculature,UBERON:0035659,AS,deep facial vein
 blood_vasculature,UBERON:0003478,AS,inferior labial vein
+blood_vasculature,ASCTB-TEMP:inferior-labial-gland-venule,AS,inferior labial gland venule
 blood_vasculature,UBERON:8600068,AS,mental vein
 blood_vasculature,UBERON:0035662,AS,parotid vein
 blood_vasculature,UBERON:0001655,AS,submental vein
 blood_vasculature,UBERON:0003477,AS,superior labial vein
+blood_vasculature,ASCTB-TEMP:superior-labial-gland-venule,AS,superior labial gland venule
 blood_vasculature,UBERON:0034982,AS,inferior bulb of internal jugular vein
 blood_vasculature,UBERON:0007160,AS,inferior petrosal sinus
 blood_vasculature,UBERON:0003712,AS,cavernous sinus
@@ -2884,8 +3049,17 @@ blood_vasculature,UBERON:0004689,AS,nasofrontal vein
 blood_vasculature,UBERON:0035547,AS,vorticose vein #2
 blood_vasculature,UBERON:0006634,AS,lingual vein
 blood_vasculature,UBERON:8600069,AS,deep lingual vein
+blood_vasculature,ASCTB-TEMP:anterior-lingual-gland-venule,AS,anterior lingual gland venule
+blood_vasculature,ASCTB-TEMP:buccal-mucosa-venule,AS,buccal mucosa venule
 blood_vasculature,UBERON:8600070,AS,dorsal lingual vein
+blood_vasculature,ASCTB-TEMP:weber-s-gland-venule,AS,Weber's gland venule
+blood_vasculature,ASCTB-TEMP:peritonsillar-venous-plexus,AS,peritonsillar venous plexus
+blood_vasculature,ASCTB-TEMP:palatine-tonsil-venule,AS,palatine tonsil venule
 blood_vasculature,UBERON:8600071,AS,sublingual vein
+blood_vasculature,ASCTB-TEMP:concomitant-wharton-doct-vein,AS,concomitant Wharton doct vein
+blood_vasculature,ASCTB-TEMP:submandibular-gland-venule,AS,submandibular gland venule
+blood_vasculature,ASCTB-TEMP:sublingual-gland-venule,AS,sublingual gland venule
+blood_vasculature,ASCTB-TEMP:tongue-venule,AS,tongue venule
 blood_vasculature,UBERON:0034965,AS,middle thyroid vein
 blood_vasculature,UBERON:0005475,AS,sigmoid sinus
 blood_vasculature,UBERON:0017637,AS,marginal venous sinus
@@ -3777,11 +3951,15 @@ heart,CL:0000057,CT,fibroblast
 heart,HGNC:8803,B (gene),PDGFRA
 heart,HGNC:4620,B (gene),GSN
 heart,HGNC:2705,B (gene),DCN
-heart,UBERON:0003379,AS,myocardium
-heart,CL:0000746,CT,cardiomyocyte
+heart,UBERON:0009966,AS,internodal tract
+heart,CL:1000287,CT,myocyte of anterior internodal tract
 heart,HGNC:7939,B (gene),NPPA
 heart,HGNC:7585,B (gene),MYL4
 heart,HGNC:21719,B (gene),MYL7
+heart,CL:1000290,CT,myocyte of middle internodal tract
+heart,CL:1000291,CT,myocyte of posterior internodal tract
+heart,UBERON:0003379,AS,myocardium
+heart,CL:0000746,CT,cardiomyocyte
 heart,CL:2000067,CT,fibroblast
 heart,CL:0000235,CT,macrophage
 heart,HGNC:1628,B (gene),CD14
@@ -3792,13 +3970,25 @@ heart,CL:0002573,CT,Schwann Cell
 heart,HGNC:9086,B (gene),PLP1
 heart,HGNC:8008,B (gene),NRXN1
 heart,HGNC:8010,B (gene),NRXN3
-heart,UBERON:0003383,AS,myocardium
+heart,UBERON:0004491,AS,myocardium
 heart,CL:0000097,CT,mast cell
+heart,HGNC:6342,B (gene),CD117
+heart,HGNC:7316,B (gene),MS4A2
 heart,CL:0002138,CT,lymphatic endothelial cell
+heart,HGNC:14687,B (gene),LYVE1
+heart,HGNC:29602,B (gene),PDPN
 heart,CL:0000236,CT,B lymphocyte
-heart,CL:0000914,CT,NK/T lymphocyte
+heart,HGNC:1633,B (gene),CD19
+heart,HGNC:7315,B (gene),CD20
+heart,CL:0000623,CT,NK/T lymphocyte
+heart,HGNC:7830,B (gene),NKG7
+heart,HGNC:4414,B (gene),GNLY
+heart,HGNC:4708,B (gene),GZMA
 heart,CL:0001065,CT,Innate lymphoid cell
+heart,HGNC:6024,B (gene),CD127
 heart,CL:0002350,CT,endocardial cell
+heart,HGNC:7945,B (gene),NPR3
+heart,HGNC:8659,B (gene),PCDH7
 heart,UBERON:0002049,AS,vasculature
 heart,CL:0010008,CT,endothelial cell
 heart,CL:0000359,CT,smooth muscle cell
@@ -3809,12 +3999,14 @@ heart,HGNC:60,B (gene),ABCC9
 heart,HGNC:6269,B (gene),KCNJ8
 heart,UBERON:0001979,AS,venule
 heart,FMA:76767,AS,anterior cardiac veins
+heart,UBERON:0004150,AS,coronary sinus valve
+heart,CL:4030032,CT,valve interstitial cell
+heart,CL:0002350,CT,endocardial
 heart,CL:0017004,CT,telocyte (interstitial like cell of cajal)
 heart,HGNC:1662,B (gene),CD34
 heart,HGNC:12692,B (gene),VIM
 heart,CL:0000542,CT,lymphocyte
 heart,HGNC:1706,B (gene),CD8A
-heart,HGNC:7830,B (gene),NKG7
 heart,HGNC:6524,B (gene),LCK
 heart,CL:0001056,CT,dendritic cell
 heart,HGNC:6149,B (gene),ITGAM
@@ -3830,13 +4022,13 @@ heart,UBERON:0035422,AS,left circumflex artery
 heart,FMA:3851,AS,atrioventicular nodal artery
 heart,UBERON:0005438,AS,coronary sinus
 heart,UBERON:0002352,AS,atrioventricular node
+heart,CL:0002072,CT,nodal myocyte
 heart,UBERON:0001625,AS,right coronary artery
 heart,UBERON:0035374,AS,small cardiac vein
 heart,UBERON:0002079,AS,left atrium
 heart,UBERON:0003380,AS,myocardium
 heart,HGNC:12403,B (gene),NPPA
 heart,CL:0001065,CT,ILC
-heart,CL:0002350,CT,endocardial
 heart,CL:0000071,CT,endothelial cell
 heart,UBERON:0001982,AS,vasculature
 heart,CL:0002144,CT,capillary endothelial cell
@@ -3854,9 +4046,10 @@ heart,HGNC:7577,B (gene),MYH7
 heart,HGNC:7583,B (gene),MYL2
 heart,HGNC:3703,B (gene),FHL2
 heart,CL:0002068,CT,Purkinje fiber cell
+heart,HGNC:4279,B (gene),GJA5
 heart,CL:2000066,CT,fibroblast
+heart,UBERON:0003383,AS,myocardium
 heart,FMA:3860,AS,left diagonal branch of the left anterior descending artery
-heart,CL:0000071,CT,smooth muscle cell
 heart,FMA:3902,AS,left obtuse marginal branch of the left coronary artery
 heart,FMA:3835,AS,posterior left ventricular branch of the right coronary artery
 heart,FMA:4708,AS,left marginal vein
@@ -3877,7 +4070,6 @@ heart,FMA:3818,AS,right marginal artery
 heart,UBERON:8470002,AS,Moderator band
 heart,UBERON:0000946,AS,Cardial valve
 heart,UBERON:0002134,AS,Tricuspid valve
-heart,CL:4030032,CT,valve interstitial cell
 heart,UBERON:0002146,AS,Pulmonary Valve
 heart,UBERON:0002135,AS,Mitral valve
 heart,UBERON:0002137,AS,Aortic valve
@@ -4628,6 +4820,7 @@ liver,HGNC:8823,B (protein),CD31
 liver,HGNC:3349,B (protein),CD105
 liver,CL:0000091,CT,Kupffer cell
 liver,HGNC:1693,B (gene),CD68
+liver,HGNC:25357,B (gene),C-type lectin domain family 4 member F
 liver,HGNC:1693,B (protein),CD68
 liver,UBERON:0006729,AS,Disse's space
 liver,CL:0000632,CT,quiescent hepatic stellate cell
@@ -4640,6 +4833,8 @@ liver,HGNC:2770,B (protein),desmin
 liver,CL:0000738,CT,leukocyte
 liver,UBERON:0005452,AS,hepatic plate
 liver,CL:0000182,CT,hepatocyte
+liver,HGNC:399,B (gene),ALB
+liver,HGNC:5024,B (gene),hepatocyte nuclear factor 4 alpha
 liver,HGNC:2625,B (protein),CYP2D6
 liver,HGNC:7154,B (protein),CD10
 liver,HGNC:42,B (protein),BSEP
@@ -4687,6 +4882,11 @@ liver,UBERON:0005169,AS,interstitial
 liver,CL:0009100,CT,portal fibroblast
 liver,HGNC:2500,B (gene),CTGF
 liver,HGNC:11801,B (protein),THY1
+liver,UBERON:0002107,AS,Liver
+liver,UBERON:0004648,AS,hepatic Lobule
+liver,UBERON:0002394,AS,bile duct
+liver,HGNC:2197,B (gene),collagen type I alpha 1 chain
+liver,HGNC:11801,B (gene),Thy-1 cell surface antigen
 liver,UBERON:0001282,AS,Canals of Hering
 liver,CL:0002196,CT,hepatic oval cell
 liver,ASCTB-TEMP:ov-6-antigen,B (gene),OV-6 ANTIGEN
@@ -5852,7 +6052,25 @@ mouth,UBERON:0000165,AS,mouth
 mouth,ASCTB-TEMP:tongue,AS,tongue
 mouth,UBERON:0003729,AS,mouth mucosa
 mouth,UBERON:0001828,AS,gingiva
+mouth,ASCTB-TEMP:gingival-attachment,AS,gingival attachment
 mouth,CL:0002621,CT,gingival epithelial cell
+mouth,CL:0000057,CT,fibroblast
+mouth,CL:0000084,CT,T cell
+mouth,CL:0000097,CT,mast cell
+mouth,CL:0000115,CT,endothelial cell
+mouth,CL:0000148,CT,melanocyte
+mouth,CL:0000235,CT,macrophage
+mouth,CL:0000236,CT,B cell (non-plasma)
+mouth,CL:0000242,CT,Merkel cell
+mouth,CL:0000312,CT,keratinocyte
+mouth,CL:0000451,CT,dendritic cell
+mouth,CL:0000453,CT,Langerhans cell
+mouth,CL:0000623,CT,NK (natural killer) cells
+mouth,CL:0000775,CT,neutrophil
+mouth,CL:0000786,CT,plasma cell
+mouth,CL:0000815,CT,regulatory T cell (Treg)
+mouth,CL:0001065,CT,innate lymphoid cell
+mouth,ASCTB-TEMP:junctional-epithelium-cell,CT,junctional epithelium cell
 mouth,UBERON:0006956,AS,buccal mucosa
 mouth,UBERON:0004923,AS,mucosa of the lip
 mouth,UBERON:0035967,AS,alveolar mucosa
@@ -5860,35 +6078,42 @@ mouth,UBERON:0010047,AS,oral gland
 mouth,UBERON:0001044,AS,saliva-secreting gland
 mouth,UBERON:0001829,AS,major salivary gland
 mouth,UBERON:0001831,AS,parotid gland
+mouth,ASCTB-TEMP:parotid-gland-ducto-acinar,AS,parotid gland ducto-acinar
 mouth,CL:0000136,CT,adipocyte
 mouth,ASCTB-TEMP:basal-ductal-cell,CT,basal ductal cell
-mouth,CL:0000451,CT,dendritic cell
-mouth,CL:0000115,CT,endothelial cell
-mouth,ASCTB-TEMP:excretory-duct-epithelial-cell,CT,excretory duct epithelial cell
 mouth,ASCTB-TEMP:helper-t,CT,helper T
 mouth,CL:0000987,CT,IgA secreting plasma cell
-mouth,CL:4052048,CT,intercalated duct epithelial cell
 mouth,ASCTB-TEMP:ionocyte,CT,ionocyte
-mouth,CL:0000235,CT,macrophage
-mouth,CL:0000097,CT,mast cell
 mouth,ASCTB-TEMP:myoepithelial-cell,CT,myoepithelial cell
 mouth,ASCTB-TEMP:periacinar-fibroblast,CT,periacinar fibroblast
 mouth,CL:0000669,CT,pericyte
 mouth,ASCTB-TEMP:periductal-fibroblast,CT,periductal fibroblast
 mouth,ASCTB-TEMP:serous-acinar-cell,CT,serous acinar cell
 mouth,CL:0000192,CT,smooth muscle cell
-mouth,CL:4052049,CT,striated duct epithelial cell
 mouth,ASCTB-TEMP:tuft-cell,CT,tuft cell
+mouth,UBERON:0035048,AS,excretory duct
+mouth,ASCTB-TEMP:excretory-duct-epithelial-cell,CT,excretory duct epithelial cell
+mouth,UBERON:0035046,AS,intercalated duct
+mouth,CL:4052048,CT,intercalated duct epithelial cell
+mouth,UBERON:0035047,AS,striated duct
+mouth,CL:4052049,CT,striated duct epithelial cell
 mouth,UBERON:0001832,AS,sublingual gland
+mouth,ASCTB-TEMP:sublingual-gland-ducto-acinar,AS,sublingual gland ducto-acinar
 mouth,ASCTB-TEMP:demilune-acinar-cell,CT,demilune acinar cell
 mouth,ASCTB-TEMP:mucous-acinar-cell,CT,mucous acinar cell
 mouth,ASCTB-TEMP:seromucosal-acinar-cell,CT,seromucosal acinar cell
+mouth,UBERON:0001838,AS,intercalated duct
 mouth,UBERON:0001736,AS,submandibular gland
+mouth,ASCTB-TEMP:submandibular-gland-ducto-acinar,AS,submandibular gland ducto-acinar
+mouth,ASCTB-TEMP:excretory-duct,AS,excretory duct
+mouth,ASCTB-TEMP:intercalated-duct,AS,intercalated duct
+mouth,ASCTB-TEMP:striated-duct,AS,striated duct
 mouth,UBERON:0001830,AS,minor salivary gland
 mouth,UBERON:0006330,AS,anterior lingual gland
 mouth,UBERON:8480065,AS,labial gland
 mouth,UBERON:0002447,AS,palatine gland
 mouth,UBERON:0034934,AS,Weber's gland
+mouth,UBERON:0013475,AS,gustatory gland (Von Ebner's gland)
 muscular_system,UBERON:0000383,AS,muscular system
 muscular_system,CL:0000188,CT,skeletal muscle cell
 muscular_system,UBERON:0002378,AS,abdomen muscle
@@ -6574,6 +6799,7 @@ pancreas,HGNC:9155,B (gene),Pancreatic lipase
 pancreas,HGNC:24268,B (protein),Asc-type amino acid transporter 1
 pancreas,UBERON:0009752,AS,Connective tissue
 pancreas,UBERON:0000482,AS,Basal lamina
+pancreas,ASCTB-TEMP:extracellular-matrix,AS,Extracellular matrix
 pancreas,HGNC:6487,B (gene),"Laminin, subunit beta 2"
 pancreas,HGNC:2202,B (gene),Collagen IV
 pancreas,UBERON:0002384,AS,connective tissue
@@ -9057,9 +9283,11 @@ skin,HGNC:11190,B (protein),SRY-box transcription factor 10
 skin,HGNC:10492,B (protein),S100 calcium binding protein A2
 skin,HGNC:7124,B (protein),melan-A
 skin,CL:0000312,CT,keratinocyte
+skin,UBERON:0002283,AS,nail matrix
+skin,UBERON:0008198,AS,Nail plate
 skin,CL:4033056,CT,Keratinocyte (Onychocyte)
 skin,HGNC:6427,B (protein),keratin 17
-skin,UBERON:0008198,AS,Nail plate
+skin,UBERON:0002067,AS,Dermis
 skin,UBERON:0002073,AS,Hair follicles
 skin,UBERON:0005932,AS,Hair bulb
 skin,CL:0002562,CT,Matrix cell
@@ -9087,7 +9315,6 @@ skin,HGNC:30840,B (protein),keratin 26
 skin,UBERON:0008974,AS,Apocrine glands
 skin,HGNC:4172,B (protein),GATA3
 skin,HGNC:8993,B (protein),GCDFP-15
-skin,UBERON:0002067,AS,Dermis
 skin,CL:0002337,CT,keratinocyte stem cell
 skin,HGNC:6421,B (protein),keratin 15
 skin,HGNC:1662,B (protein),CD34 molecule
@@ -9182,6 +9409,7 @@ small_intestine,UBERON:0008346,AS,Epithelium
 small_intestine,CL:1000344,CT,Paneth cell
 small_intestine,HGNC:6740,B (gene),LYZ
 small_intestine,HGNC:2764,B (gene),DEFA5
+small_intestine,CL:1000317,CT,goblet cell
 small_intestine,CL:1000324,CT,goblet cell
 small_intestine,ASCTB-TEMP:muc2,B (gene),MUC2
 small_intestine,ASCTB-TEMP:itln1,B (gene),ITLN1
@@ -9315,7 +9543,7 @@ small_intestine,ASCTB-TEMP:alpha-defensin-5a,B (protein),alpha Defensin 5a
 small_intestine,CL:0000163,CT,endocrine
 small_intestine,ASCTB-TEMP:chromogranin,B (protein),Chromogranin
 small_intestine,ASCTB-TEMP:synaptophysin,B (protein),Synaptophysin
-small_intestine,CL:1000325,CT,goblet
+small_intestine,CL:1000325,CT,goblet cell
 small_intestine,CL:0000584,CT,enterocytes
 small_intestine,CL:0009080,CT,Tuft cells
 small_intestine,ASCTB-TEMP:lamina-propria-gut-associated-lymphoid-tissue-galt-,AS,Lamina propria/Gut associated lymphoid tissue (GALT)
@@ -9353,7 +9581,7 @@ small_intestine,ASCTB-TEMP:circular-longitudinal-muscle,AS,circular/longitudinal
 small_intestine,FMA:14966,AS,terminal ileum
 small_intestine,ASCTB-TEMP:epithelium,AS,Epithelium
 small_intestine,ASCTB-TEMP:epithelial-stem-cells,CT,epithelial stem cells
-small_intestine,CL:1000326,CT,goblet
+small_intestine,CL:1000326,CT,goblet cell
 spinal_cord,UBERON:0002240,AS,spinal cord
 spinal_cord,UBERON:0002726,AS,cervical spinal cord
 spinal_cord,UBERON:0005841,AS,cervical spinal cord dorsal column
