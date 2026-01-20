@@ -2,57 +2,97 @@
 smooth muscle cell,CL:0000192,Cardiovascular_system_v1;Digestive_system_v1;Endocrine_System_v1;Integumentary_system_v1;Muscular_system_v1;Nervous_system_v1;Pulmonary_system_v1,7
 kidney proximal convoluted tubule epithelial cell,CL:1000838,Cardiovascular_system_v1;Dental_and;Endocrine_System_v1;Skeletal_system_v1;Urinary_system_v1,5
 osteoblast,CL:0000062,Dental_and;Endocrine_System_v1;Integumentary_system_v1;Male_reproductive;Skeletal_system_v1,5
+skeletal muscle fiber,CL:0008002,Endocrine_System_v1;Female_reproductive_v;Male_reproductive;Muscular_system_v1;Nervous_system_v1,5
 autonomic neuron,CL:0000107,Immune_and;Integumentary_system_v1;Muscular_system_v1;Nervous_system_v1,4
 endothelial cell,CL:0000115,Cardiovascular_system_v1;Endocrine_System_v1;Fascia_System_v1;Integumentary_system_v1,4
 kidney distal convoluted tubule epithelial cell,CL:1000849,Dental_and;Endocrine_System_v1;Skeletal_system_v1;Urinary_system_v1,4
 osteoclast,CL:0000092,Dental_and;Endocrine_System_v1;Male_reproductive;Skeletal_system_v1,4
-skeletal muscle fiber,CL:0008002,Endocrine_System_v1;Female_reproductive_v;Male_reproductive;Muscular_system_v1,4
 adenohypophysis,UBERON:0002196,Endocrine_System_v1;Female_reproductive_v;Male_reproductive,3
+alveolus of lung,UBERON:0002299,Female_reproductive_v;Nervous_system_v1;Pulmonary_system_v1,3
 bone marrow,UBERON:0002371,Dental_and;Endocrine_System_v1;Skeletal_system_v1,3
 chief cell of parathyroid gland,CL:0000446,Dental_and;Endocrine_System_v1;Skeletal_system_v1,3
 fibroblast of dermis,CL:0002551,Endocrine_System_v1;Female_reproductive_v;Male_reproductive,3
+heart left ventricle,UBERON:0002084,Cardiovascular_system_v1;Female_reproductive_v;Nervous_system_v1,3
 kidney insterstitium,UBERON:0005215,Dental_and;Endocrine_System_v1;Skeletal_system_v1,3
 osteocyte,CL:0000137,Dental_and;Endocrine_System_v1;Skeletal_system_v1,3
 parafollicular cell,CL:0000570,Dental_and;Endocrine_System_v1;Skeletal_system_v1,3
 parvocellular neurosecretory cell,CL:1001505,Endocrine_System_v1;Female_reproductive_v;Male_reproductive,3
+pudendal nerve,UBERON:0011390,Female_reproductive_v;Male_reproductive;Nervous_system_v1,3
+sympathetic nerve,UBERON:0034729,Dental_and;Male_reproductive;Nervous_system_v1,3
+urinary bladder,UBERON:0001255,Male_reproductive;Nervous_system_v1;Urinary_system_v1,3
 white adipocyte,CL:0000448,Endocrine_System_v1;Female_reproductive_v;Male_reproductive,3
 zona reticularis of adrenal gland,UBERON:0002055,Endocrine_System_v1;Female_reproductive_v;Male_reproductive,3
 CD4-positive helper T cell,CL:0000492,Immune_and;Integumentary_system_v1,2
 Hepatocyte,CL:0000182,Digestive_system_v1;Endocrine_System_v1,2
 Langerhans cell,CL:0000453,Immune_and;Integumentary_system_v1,2
 Leydig cell,CL:0000178,Immune_and;Male_reproductive,2
+Meissner's corpuscle,UBERON:0012450,Dental_and;Nervous_system_v1,2
+Merkel nerve ending,UBERON:0012456,Dental_and;Nervous_system_v1,2
 Sertoli cell,CL:0000216,Immune_and;Male_reproductive,2
 T cell,CL:0000084,Immune_and;Integumentary_system_v1,2
 T-helper 17 cell,CL:0000899,Immune_and;Integumentary_system_v1,2
+abducens nerve,UBERON:0001646,Dental_and;Nervous_system_v1,2
 alveolar macrophage,CL:0000583,Fascia_System_v1;Immune_and,2
-alveolus of lung,UBERON:0002299,Female_reproductive_v;Pulmonary_system_v1,2
+arterial system,UBERON:0004572,Cardiovascular_system_v1;Nervous_system_v1,2
+auditory hair cell,CL:0000202,Dental_and;Nervous_system_v1,2
 baroreceptor,UBERON:0004019,Cardiovascular_system_v1;Nervous_system_v1,2
 bone tissue,UBERON:0002481,Dental_and;Skeletal_system_v1,2
+cardiac muscle cell,CL:0000746,Cardiovascular_system_v1;Nervous_system_v1,2
+cardiac right atrium,UBERON:0002078,Cardiovascular_system_v1;Nervous_system_v1,2
 connective tissue,UBERON:0002384,Fascia_System_v1;Immune_and,2
 connective tissue cell,CL:0002320,Fascia_System_v1;Integumentary_system_v1,2
+cranial nerve II,UBERON:0000941,Dental_and;Nervous_system_v1,2
 dermis lymphatic vessel endothelial cell,CL:2000011,Immune_and;Integumentary_system_v1,2
+dilatator pupillae,UBERON:0001608,Dental_and;Nervous_system_v1,2
+eccrine sweat gland,UBERON:0000423,Integumentary_system_v1;Nervous_system_v1,2
 endocrine system,UBERON:0000949,Endocrine_System_v1;Urinary_system_v1,2
 epithelial cell,CL:0000066,Digestive_system_v1;Immune_and,2
+facial nerve,UBERON:0001647,Dental_and;Nervous_system_v1,2
 fetal artery endothelial cell,CL:4047006,Immune_and;Integumentary_system_v1,2
-heart left ventricle,UBERON:0002084,Cardiovascular_system_v1;Female_reproductive_v,2
+genioglossus muscle,UBERON:0001571,Dental_and;Nervous_system_v1,2
+glossopharyngeal nerve,UBERON:0001649,Dental_and;Nervous_system_v1,2
+heart right ventricle,UBERON:0002080,Cardiovascular_system_v1;Nervous_system_v1,2
+hyoglossus muscle,UBERON:0001572,Dental_and;Nervous_system_v1,2
+hypogastric nerve,UBERON:0005303,Male_reproductive;Nervous_system_v1,2
+hypoglossal nerve,UBERON:0001650,Dental_and;Nervous_system_v1,2
 immature NK T cell,CL:0000914,Immune_and;Integumentary_system_v1,2
+inferior oblique extraocular muscle,UBERON:0006320,Dental_and;Nervous_system_v1,2
+inferior pharyngeal constrictor,UBERON:0001570,Dental_and;Nervous_system_v1,2
+interior rectus extraocular muscle,UBERON:0006322,Dental_and;Nervous_system_v1,2
+intrinsic muscle of tongue,UBERON:0001576,Dental_and;Nervous_system_v1,2
 juxtaglomerular complex cell,CL:1000618,Cardiovascular_system_v1;Endocrine_System_v1,2
 keratinocyte,CL:0000312,Immune_and;Integumentary_system_v1,2
 kidney afferent arteriolar cell,CL:1001006,Cardiovascular_system_v1;Endocrine_System_v1,2
+lacrimal gland,UBERON:0001817,Dental_and;Nervous_system_v1,2
+lateral rectus extra-ocular muscle,UBERON:0001603,Dental_and;Nervous_system_v1,2
+left cardiac atrium,UBERON:0002079,Cardiovascular_system_v1;Nervous_system_v1,2
+levator palpebrae superioris,UBERON:0001604,Dental_and;Nervous_system_v1,2
 liver dendritic cell,CL:2000055,Digestive_system_v1;Immune_and,2
 lower motor neuron,CL:0008039,Muscular_system_v1;Nervous_system_v1,2
+lung,UBERON:0002048,Nervous_system_v1;Pulmonary_system_v1,2
 lung connective tissue,UBERON:0000114,Fascia_System_v1;Pulmonary_system_v1,2
 macrophage,CL:0000235,Fascia_System_v1;Immune_and,2
+masseter muscle,UBERON:0001597,Dental_and;Nervous_system_v1,2
+medial rectus extraocular muscle,UBERON:0001602,Dental_and;Nervous_system_v1,2
 memory T cell,CL:0000813,Immune_and;Integumentary_system_v1,2
 mesenchymal stem cell,CL:0000134,Immune_and;Integumentary_system_v1,2
+middle pharyngeal constrictor,UBERON:0010749,Dental_and;Nervous_system_v1,2
 mucosal type mast cell,CL:0000485,Immune_and;Integumentary_system_v1,2
 nasopharyngeal epithelial cell,CL:1001573,Immune_and;Integumentary_system_v1,2
 neurohypophysis,UBERON:0002198,Endocrine_System_v1;Female_reproductive_v,2
 neuron,CL:0000540,Digestive_system_v1;Nervous_system_v1,2
+nociceptor nerve ending,UBERON:0035017,Dental_and;Nervous_system_v1,2
+oculomotor nerve,UBERON:0001643,Dental_and;Nervous_system_v1,2
+olfactory nerve,UBERON:0001579,Dental_and;Nervous_system_v1,2
+olfactory receptor cell,CL:0000207,Dental_and;Nervous_system_v1,2
+orbicularis oculi muscle,UBERON:0001578,Dental_and;Nervous_system_v1,2
+orbicularis oris muscle,UBERON:0010933,Dental_and;Nervous_system_v1,2
 parietal cell,CL:0000162,Digestive_system_v1;Endocrine_System_v1,2
 parotid gland,UBERON:0001831,Dental_and;Nervous_system_v1,2
+pharyngeal nerve plexus,UBERON:0011325,Dental_and;Nervous_system_v1,2
+photoreceptor cell,CL:0000210,Dental_and;Nervous_system_v1,2
 proximal convoluted tubule,UBERON:0001287,Dental_and;Skeletal_system_v1,2
-pudendal nerve,UBERON:0011390,Female_reproductive_v;Male_reproductive,2
+pterygoid muscle,UBERON:0006720,Dental_and;Nervous_system_v1,2
 pulmonary alveolar type 2 cell,CL:0002063,Immune_and;Pulmonary_system_v1,2
 pulmonary arteriole,UBERON:8600077,Cardiovascular_system_v1;Pulmonary_system_v1,2
 pulmonary capillary,UBERON:0016405,Cardiovascular_system_v1;Pulmonary_system_v1,2
@@ -62,15 +102,29 @@ regular ventricular cardiac myocyte,CL:0002131,Cardiovascular_system_v1;Endocrin
 renal glomerulus,UBERON:0000074,Cardiovascular_system_v1;Urinary_system_v1,2
 sacral nerve plexus,UBERON:0034986,Female_reproductive_v;Male_reproductive,2
 secretory cell,CL:0000151,Digestive_system_v1;Integumentary_system_v1,2
+sensory neuron,CL:0000101,Integumentary_system_v1;Nervous_system_v1,2
 sinoatrial node,UBERON:0002351,Cardiovascular_system_v1;Nervous_system_v1,2
+sphincter pupillae,UBERON:0001607,Dental_and;Nervous_system_v1,2
 spinal cord,UBERON:0002240,Integumentary_system_v1;Pulmonary_system_v1,2
 spinous cell of epidermis,CL:0000649,Immune_and;Integumentary_system_v1,2
 stem cell,CL:0000034,Digestive_system_v1;Integumentary_system_v1,2
+styloglossus,UBERON:0001573,Dental_and;Nervous_system_v1,2
+stylopharyngeus muscle,UBERON:0008804,Dental_and;Nervous_system_v1,2
 sublingual gland,UBERON:0001832,Dental_and;Nervous_system_v1,2
 submandibular gland,UBERON:0001736,Dental_and;Nervous_system_v1,2
+superior oblique extraocular muscle,UBERON:0006321,Dental_and;Nervous_system_v1,2
+superior pharyngeal constrictor,UBERON:0006329,Dental_and;Nervous_system_v1,2
+superior rectus extraocular muscle,UBERON:0006323,Dental_and;Nervous_system_v1,2
 sympathetic neuron,CL:0011103,Fascia_System_v1;Immune_and,2
-thoracic nerve,UBERON:0003726,Cardiovascular_system_v1;Nervous_system_v1,2
+taste bud,UBERON:0001727,Dental_and;Nervous_system_v1,2
+temporalis muscle,UBERON:0001598,Dental_and;Nervous_system_v1,2
+temporomandibular joint,UBERON:0003700,Dental_and;Nervous_system_v1,2
+trigeminal nerve,UBERON:0001645,Dental_and;Nervous_system_v1,2
+trochlear nerve,UBERON:0001644,Dental_and;Nervous_system_v1,2
 type L enteroendocrine cell,CL:0002279,Digestive_system_v1;Endocrine_System_v1,2
-urinary bladder,UBERON:0001255,Male_reproductive;Urinary_system_v1,2
 vagal neural crest cell,CL:0011017,Digestive_system_v1;Pulmonary_system_v1,2
 vagus nerve,UBERON:0001759,Cardiovascular_system_v1;Nervous_system_v1,2
+venous system,UBERON:0004582,Cardiovascular_system_v1;Nervous_system_v1,2
+vestibular hair cell,CL:0000609,Dental_and;Nervous_system_v1,2
+vestibulocochlear nerve,UBERON:0001648,Dental_and;Nervous_system_v1,2
+zygomaticus major muscle,UBERON:0008593,Dental_and;Nervous_system_v1,2

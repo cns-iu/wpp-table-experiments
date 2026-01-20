@@ -2,16 +2,11 @@
 """
 Extract unique tissue effectors from CSV files.
 
-New behavior (dedupe by ID):
-- For rows where effector scale == "tissue" (case-insensitive),
-  collects labels and IDs (from multiple possible columns).
-- Excludes any ID that starts with "CL" (case-insensitive).
-- Deduplicates by ID:
-    - For each non-empty, non-CL ID, produce exactly one output row with AS_ID = ID
-      and AS = all distinct labels that referenced that ID joined by " | ".
-    - For labels that had no non-CL ID at all, produce one row per unique label
-      with AS_ID empty string.
-- Writes output CSV with columns AS, AS_ID (one row per unique ID plus unique-label-only rows).
+Output columns:
+- AS: joined labels
+- AS_ID: the non-CL ID (empty string for label-only rows)
+- SOURCE_TABLES: filenames (each appearing at most once) where that AS_ID was found,
+  joined by " | ". Label-only rows have SOURCE_TABLES empty.
 """
 
 import os
@@ -19,7 +14,7 @@ import glob
 import pandas as pd
 
 input_folder = "./data/WPP Input Tables/"
-output_tissue_file = "./output/analysis/AS_UBERON_in_WPP.csv"
+output_tissue_file = "./output/analysis/all_Uberon_statistics/AS_UBERON_in_WPP.csv"
 
 EFFECTOR_SCALE_COLS = ["effector scale", "Effector Scale", "effector_scale", "EffectorScale"]
 TISSUE_LABEL_COLS = [
@@ -36,7 +31,6 @@ TISSUE_ID_COLS = [
 # Helpers
 # -----------------------
 def find_all_columns(df, candidates):
-    """Return list of matching column names from df (case-insensitive), preserving candidate order."""
     lowered = {c.lower(): c for c in df.columns}
     matches = []
     for cand in candidates:
@@ -46,7 +40,6 @@ def find_all_columns(df, candidates):
         lc = cand.lower()
         if lc in lowered:
             matches.append(lowered[lc])
-    # unique-preserve-order
     seen = set()
     uniq = []
     for m in matches:
@@ -77,6 +70,25 @@ def is_cl_id(idstr):
         return False
     return str(idstr).strip().upper().startswith("CL")
 
+def normalize_source_name(fname):
+    """
+    Normalize input table names so the same table
+    is only listed once per ID.
+    """
+    s = fname.strip().lower()
+
+    # remove anything after ' - '
+    if " - " in s:
+        s = s.split(" - ")[0]
+
+    # remove file extension
+    s = os.path.splitext(s)[0]
+
+    # normalize hyphens/underscores
+    s = s.replace("_", "-")
+
+    return s
+
 # -----------------------
 # Main
 # -----------------------
@@ -88,6 +100,9 @@ def collect_tissue_only_dedupe_by_id(input_folder, output_tissue_file):
 
     # Map from id -> set(labels)
     id_to_labels = {}
+    # Map from id -> set(source filenames). using a set ensures each filename is only listed once per id.
+    id_to_sources = {}
+
     # Set of labels that were seen but had no non-CL ID anywhere
     labels_with_no_id = set()
     per_file_counts = {}
@@ -100,7 +115,6 @@ def collect_tissue_only_dedupe_by_id(input_folder, output_tissue_file):
         try:
             df = pd.read_csv(fp, dtype=str, header=header_row)
         except Exception as e:
-            # try utf-8-sig fallback then skip
             try:
                 df = pd.read_csv(fp, dtype=str, header=header_row, encoding="utf-8-sig")
             except Exception:
@@ -128,6 +142,7 @@ def collect_tissue_only_dedupe_by_id(input_folder, output_tissue_file):
             else:
                 for _, row in df.loc[tissue_mask].iterrows():
                     tissue_count += 1
+
                     # collect labels in this row
                     labels_found = []
                     for col in label_cols:
@@ -152,12 +167,22 @@ def collect_tissue_only_dedupe_by_id(input_folder, output_tissue_file):
                             ids_found.append(pclean)
 
                     if ids_found:
-                        # for every non-CL id, add association to labels
+                        # for every non-CL id, add association to labels + record source table
                         for idv in ids_found:
                             if idv not in id_to_labels:
                                 id_to_labels[idv] = set()
                             for lbl in labels_found:
                                 id_to_labels[idv].add(lbl)
+
+                            # track the filename(s) where this id appeared
+                            # using set prevents duplicate filename entries even if the same file contributes many rows
+                            if idv not in id_to_sources:
+                                id_to_sources[idv] = set()
+                            # id_to_sources[idv].add(fname)
+                            canonical_name = normalize_source_name(fname)
+                            id_to_sources[idv].add(canonical_name)
+
+
                     else:
                         # record labels that currently have no non-CL id
                         for lbl in labels_found:
@@ -165,26 +190,27 @@ def collect_tissue_only_dedupe_by_id(input_folder, output_tissue_file):
 
         per_file_counts[fname] = tissue_count
 
-    # Now build output rows:
-    # - one row per unique non-empty ID with labels joined by " | "
-    # - plus one row per unique label in labels_with_no_id with empty AS_ID (unless that label also appears attached to some ID; in that case skip)
+    # Build output rows
     rows = []
 
-    # sort IDs for stable output
+    # stable sort of IDs
     for idv in sorted(id_to_labels, key=lambda x: x):
         labels = sorted(id_to_labels[idv])
-        # join labels with ' | ' so we retain all label text
         as_field = " | ".join(labels)
-        rows.append({"AS": as_field, "AS_ID": idv})
 
-    # For labels that had no ID AND are not present in any id_to_labels value (avoid duplicates)
+        # stable join of unique filenames; each filename appears at most once due to set
+        sources = sorted(id_to_sources.get(idv, set()))
+        source_field = " | ".join(sources)
+
+        rows.append({"AS": as_field, "AS_ID": idv, "SOURCE_TABLES": source_field})
+
+    # labels that had no ID and not already included via an ID
     labels_in_ids = set(l for labels in id_to_labels.values() for l in labels)
     leftover_labels = sorted(lbl for lbl in labels_with_no_id if lbl not in labels_in_ids)
     for lbl in leftover_labels:
-        rows.append({"AS": lbl, "AS_ID": ""})
+        rows.append({"AS": lbl, "AS_ID": "", "SOURCE_TABLES": ""})
 
-    # Build DataFrame and write
-    out_df = pd.DataFrame(rows, columns=["AS", "AS_ID"])
+    out_df = pd.DataFrame(rows, columns=["AS", "AS_ID", "SOURCE_TABLES"])
     os.makedirs(os.path.dirname(output_tissue_file) or ".", exist_ok=True)
     out_df.to_csv(output_tissue_file, index=False)
 

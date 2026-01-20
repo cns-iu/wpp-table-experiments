@@ -5,7 +5,7 @@ import pandas as pd
 # -----------------------
 # USER CONFIG
 # -----------------------
-cl_ids_file = "./output/analysis/all_CT_statistics/all_CL_ids_in_WPP_by_id1.csv"  # your extracted CL file
+cl_ids_file = "./output/analysis/all_CT_statistics/all_CL_ids_in_WPP_by_id.csv"  # your extracted CL file
 astcb_master_file = "./data/all_asctb_ids_and_types.csv"        # master file
 output_missing = "./output/analysis/all_CT_statistics/cl_ids_missing_in_astcb.csv"
 output_present = "./output/analysis/all_CT_statistics/cl_ids_present_in_astcb.csv"

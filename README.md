@@ -16,28 +16,30 @@ This script will create spatial temporal tables for all organ systems using "Eff
 Now in HRA there are total 4955 AS entries, where organs are also considered as AS
 In WPP these Organs are considered as Organs and are separated from AS 
 In below file there are total 283 Uberon entries in WPP across 9 organ systems. Also, statistics for present in WPP but missing in HRA and present in both
+I have added the source of each IDs as well.
 
-> - Total Uberon ids in WPP => 362
-> - WPP intersection HRA => 201
-> - Only in WPP => 161
+> - Total Uberon ids in WPP => 427
+> - WPP intersection HRA => 231
+> - Only in WPP => 196
 > - Total in HRA => 4796
-> - Only in HRA => 4595
+> - Only in HRA => 4565
 
 > Output - output\analysis\all_Uberon_statistics\ 
 
-Note : While calculating this I have considered only AS from WPP and not Organ types, whereas in HRA organs are also labelled type.
+Note : While calculating this I have considered only AS from WPP and not Organ types, whereas in HRA organs are also labelled type. Also one ID might have multiple lables displayed which means that that id is present multiple times with those different labels in other tables.
 
 ## 05 & 06 Analysis
 
-Similarly, for CT the statistics are in files as total CT, present in WPP but missing in HRA, present in Both
+Similarly, for CT the statistics are in files as total CT, present in WPP but missing in HRA, present in both.
+I have added the source of each IDs as well.
 
  === SUMMARY For CT in WPP and HRA===
 
-> - Total CL IDs in WPP: 341
-> - Present in ASTCB/HRA & WPP: 123
-> - Missing in ASTCB/Only in WPP: 218
+> - Total CL IDs in WPP: 345
+> - Present in ASTCB/HRA & WPP: 124
+> - Missing in ASTCB/Only in WPP: 221
 > - Total in HRA - 515
-> - Only in HRA - 392
+> - Only in HRA - 391
 
 
 > Output - output/analysis/all_CT_statistics

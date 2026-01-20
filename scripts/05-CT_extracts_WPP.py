@@ -3,10 +3,11 @@
 Extract unique CL IDs from WPP CSVs and deduplicate by CL ID.
 
 Output:
- - ./output/analysis/all_CT_statistics/all_CL_ids_in_WPP_by_id.csv
+ - ./output/analysis/all_CT_statistics/all_CL_ids_in_WPP_by_id1.csv
 Columns:
- - CL_ID  (e.g. "CL:0000001")
- - LABELS (all distinct labels that referenced that CL ID, joined by " | ")
+ - CL_ID         (e.g. "CL:0000001")
+ - LABELS        (all distinct labels that referenced that CL ID, joined by " | ")
+ - SOURCE_TABLES (canonical filenames where the CL ID was found, joined by " | ")
 """
 
 import os
@@ -15,7 +16,7 @@ import pandas as pd
 
 # ---------- CONFIG ----------
 input_folder = "./data/WPP Input Tables/"
-output_file = "./output/analysis/all_CT_statistics/all_CL_ids_in_WPP_by_id1.csv"
+output_file = "./output/analysis/all_CT_statistics/all_CL_ids_in_WPP_by_id.csv"
 os.makedirs(os.path.dirname(output_file), exist_ok=True)
 
 ID_LABEL_PAIRS_CANDIDATES = [
@@ -57,6 +58,23 @@ def is_cl_id(idstr):
         return False
     return str(idstr).strip().upper().startswith("CL:")
 
+def normalize_source_name(fname):
+    """
+    Normalize input table names so the same table is only listed once per ID.
+    - lowercases
+    - strips extension
+    - removes trailing ' - ...' suffix if present
+    - converts underscores to hyphens
+    - strips surrounding whitespace
+    """
+    s = fname.strip().lower()
+    if " - " in s:
+        s = s.split(" - ")[0]
+    s = os.path.splitext(s)[0]
+    s = s.replace("_", "-")
+    s = s.strip()
+    return s
+
 # -----------------------
 # Main
 # -----------------------
@@ -67,6 +85,7 @@ def collect_cl_ids_dedupe_by_id(input_folder, output_file):
         return
 
     cl_to_labels = {}   # map CL_ID -> set(labels)
+    cl_to_sources = {}  # map CL_ID -> set(normalized source names)
     per_file_counts = {}
 
     for fp in files:
@@ -101,6 +120,8 @@ def collect_cl_ids_dedupe_by_id(input_folder, output_file):
             continue
 
         row_count_with_ids = 0
+        canonical_fname = normalize_source_name(fname)
+
         # iterate rows
         for _, row in df.iterrows():
             row_had_id = False
@@ -134,19 +155,27 @@ def collect_cl_ids_dedupe_by_id(input_folder, output_file):
                     if label_for_id:
                         cl_to_labels[cl_key].add(label_for_id)
 
+                    # store canonical source filename for this CL id (set prevents duplicates)
+                    if cl_key not in cl_to_sources:
+                        cl_to_sources[cl_key] = set()
+                    cl_to_sources[cl_key].add(canonical_fname)
+
             if row_had_id:
                 row_count_with_ids += 1
 
         per_file_counts[fname] = row_count_with_ids
 
-    # Build output rows: one row per unique CL ID, labels joined by " | "
+    # Build output rows: one row per unique CL ID, labels joined by " | ", sources joined by " | "
     rows = []
     for cl_id in sorted(cl_to_labels.keys(), key=lambda x: x):
         labels = sorted(cl_to_labels[cl_id])
         label_str = " | ".join(labels) if labels else ""
-        rows.append({"LABELS": label_str, "CL_ID": cl_id})
+        sources = sorted(cl_to_sources.get(cl_id, set()))
+        source_str = " | ".join(sources) if sources else ""
+        # produce row with CL_ID first for readability
+        rows.append({"LABELS": label_str, "CL_ID": cl_id, "SOURCE_TABLES": source_str})
 
-    out_df = pd.DataFrame(rows, columns=["LABELS", "CL_ID"])
+    out_df = pd.DataFrame(rows, columns=["LABELS", "CL_ID", "SOURCE_TABLES"])
     out_df.to_csv(output_file, index=False)
 
     # Summary
