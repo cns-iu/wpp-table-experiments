@@ -4,8 +4,6 @@ __pycache__/
 *$py.class
 
 intermediate_data/
-output_logs/
-code/
 # C extensions
 *.so
 
