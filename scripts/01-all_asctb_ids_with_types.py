@@ -70,8 +70,6 @@ def extract_all_ids_and_types(tables):
     df = pd.DataFrame(records).drop_duplicates().reset_index(drop=True)
     return df
 
-
-# --- Usage ---
 tables = get_latest_asctb_data()
 print("Fetched", len(tables), "ASCT+B tables")
 

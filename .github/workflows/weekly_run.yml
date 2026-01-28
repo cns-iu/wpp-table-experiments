@@ -41,15 +41,16 @@ jobs:
         # set a reasonably long timeout so big runs don't get killed
         timeout-minutes: 60
 
-      - name: Upload outputs artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: outputs-${{ github.run_id }}
-          path: |
-            output_by_week/**
-            output/**     # in case you switched to 'output' base
-            output_logs/**
-
-      - name: List artifacts (quick debug)
+      - name: Commit and push outputs
         run: |
-          echo "Artifacts uploaded for run $GITHUB_RUN_ID"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add output_iterative output output_logs || true
+
+          if git diff --cached --quiet; then
+            echo "No output changes to commit"
+          else
+            git commit -m "Weekly pipeline outputs (run $GITHUB_RUN_ID)"
+            git push
+          fi

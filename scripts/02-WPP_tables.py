@@ -5,16 +5,10 @@ import os
 import re
 import sys
 
-# --------------------
-# CONFIG - change only these
-# --------------------
 INPUT_FOLDER = "./data/WPP Input Tables/"   # root folder containing CSV files (will search recursively)
 OUTPUT_FOLDER = "./temporal_spatial_output/"
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
-# --------------------
-# Your original mappings / sets (kept unchanged)
-# --------------------
 TIME_COLUMNS = [
     "<1 second", "1s - < 1min", "1min - < 1hr", "1hr - < 1day", "1day - < 1week",
     "1 week - < 1 year", "1 year or longer",
@@ -82,9 +76,6 @@ ftu_ids = {
     "UBERON:0001736",
 }
 
-# --------------------
-# Helper functions (robustified)
-# --------------------
 def find_col_case_insensitive(columns, candidates):
     """
     Return first matching column name from 'columns' for any candidate (case-insensitive), or None.
@@ -198,9 +189,6 @@ def make_function_at_process(lowest_function, process_fragment):
     else:
         return pf
 
-# --------------------
-# Core processing for a single file
-# --------------------
 def process_and_save_single(MAIN_CSV_PATH, OUTPUT_PATH, header_row=11):
     # read with given header row (0-indexed)
     main = pd.read_csv(MAIN_CSV_PATH, header=header_row, encoding="utf-8-sig")
@@ -290,9 +278,6 @@ def process_and_save_single(MAIN_CSV_PATH, OUTPUT_PATH, header_row=11):
     # Save to CSV
     final_pivot.to_csv(OUTPUT_PATH, index=False, encoding="utf-8-sig")
 
-# --------------------
-# Walk all folders under INPUT_FOLDER and process every CSV found
-# --------------------
 def main_run():
     csv_files = sorted(glob.glob(os.path.join(INPUT_FOLDER, "**", "*.csv"), recursive=True))
     if not csv_files:

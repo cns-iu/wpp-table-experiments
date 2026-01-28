@@ -16,7 +16,7 @@ import pandas as pd
 import sys 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
-# ---------- CONFIG ----------
+
 input_folder = "./data/WPP Input Tables/"
 output_file = "./analysis/all_CT_statistics/all_CL_ids_in_WPP_by_id.csv"
 os.makedirs(os.path.dirname(output_file), exist_ok=True)
@@ -30,9 +30,6 @@ ID_LABEL_PAIRS_CANDIDATES = [
      ["EffectorLocation/LABEL", "EffectorLocation LABEL", "EffectorLocationLabel", "Effector Location Label"])
 ]
 
-# -----------------------
-# Helpers
-# -----------------------
 def find_column(df, candidates):
     """Return first matching column name from df (case-insensitive), or None."""
     lowered = {c.lower(): c for c in df.columns}
@@ -77,9 +74,6 @@ def normalize_source_name(fname):
     s = s.strip()
     return s
 
-# -----------------------
-# Main
-# -----------------------
 def collect_cl_ids_dedupe_by_id(input_folder, output_file):
     files = sorted(glob.glob(os.path.join(input_folder, "*.csv")))
     if not files:

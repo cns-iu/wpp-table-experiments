@@ -8,17 +8,11 @@ import os
 import re
 import matplotlib.colors as mcolors
 
-# --------------------------
-# Paths
-# --------------------------
 input_folder = "./temporal_spatial_output/"
 output_folder = "./3d_scatter_plots/"
 os.makedirs(output_folder, exist_ok=True)
 files = sorted(glob.glob(os.path.join(input_folder, "*.csv")))
 
-# --------------------------
-# Configuration
-# --------------------------
 spatial_order = ["Organ", "AS", "FTU", "CT", "B"][::-1]
 time_order = [
     "<1 second", "1s - < 1min", "1min - < 1hr", "1hr - < 1day",
@@ -28,9 +22,6 @@ time_order = [
 cmap_choice = "summer"   # e.g. "viridis", "inferno", "plasma", "magma", "cividis", "YlGnBu"
 use_log_norm = False
 
-# --------------------------
-# Helpers
-# --------------------------
 def process_count(x):
     if pd.isna(x) or str(x).strip() == "":
         return 0
@@ -49,9 +40,7 @@ def extract_organ_system_name(filename):
         return " ".join(parts[:2])
     return parts[0]
 
-# --------------------------
 # Load & combine all CSVs into one dataframe with an 'Organ System' column
-# --------------------------
 combined_list = []
 organ_system_labels = []
 
@@ -67,9 +56,7 @@ if not combined_list:
 
 combined = pd.concat(combined_list, ignore_index=True)
 
-# --------------------------
 # Count processes
-# --------------------------
 for col in ["Organ", "AS", "FTU", "CT", "B"]:
     if col in combined.columns:
         combined[col + "_count"] = combined[col].apply(process_count)
@@ -87,9 +74,7 @@ long_df = combined.melt(
 long_df["Spatial Scale"] = long_df["Spatial Scale"].str.replace("_count", "")
 long_df = long_df[long_df["Count"] > 0].copy()
 
-# --------------------------
 # Build z-axis categories 
-# --------------------------
 organ_system_order = []
 seen = set()
 for f in files:
@@ -101,9 +86,7 @@ for f in files:
 if not organ_system_order:
     organ_system_order = sorted(long_df["Organ System"].unique())
 
-# --------------------------
 # Encode categorical axes
-# --------------------------
 long_df["z"] = long_df["Organ System"].astype("category").cat.set_categories(organ_system_order).cat.codes
 long_df["x"] = long_df["Spatial Scale"].astype("category").cat.set_categories(spatial_order).cat.codes
 long_df["y"] = long_df["Time Range"].astype("category").cat.set_categories(time_order).cat.codes

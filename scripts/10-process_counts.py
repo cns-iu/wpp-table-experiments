@@ -4,7 +4,6 @@ import glob
 import pandas as pd
 import re
 
-# ---------- CONFIG ----------
 input_folder = "./temporal_spatial_output/"   # folder with CSVs
 output_summary = "./unique_processes/process_counts.csv"
 # output_details_dir = "./output/unique_processes/per_file_details/"  # per-file detail lists

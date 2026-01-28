@@ -4,9 +4,6 @@ import glob
 import os
 import re
 
-# --------------------
-# CONFIG
-# --------------------
 INPUT_FOLDER = "./data/WPP Input Tables/"
 OUT_FOLDER = "./common_effectors_across_systems/"
 os.makedirs(OUT_FOLDER, exist_ok=True)
@@ -75,9 +72,6 @@ def split_multi_values(cell):
             out.append(p)
     return out
 
-# --------------------
-# Main: scan files and build maps
-# --------------------
 files = sorted(glob.glob(os.path.join(INPUT_FOLDER, "**", "*.csv"), recursive=True))
 if not files:
     raise SystemExit(f"No CSV files found in {INPUT_FOLDER}")
@@ -142,9 +136,6 @@ for file_path in files:
                 # keep an explicit empty set if not present yet (so it's easier later)
                 label_to_ids.setdefault(k, set())
 
-# --------------------
-# Build output: only labels present in >= 2 distinct files
-# --------------------
 rows = []
 for k, fileset in label_to_files.items():
     if len(fileset) >= 2:

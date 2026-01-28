@@ -55,9 +55,6 @@ FTU_IDS = {
     "UBERON:0001736",
 }
 
-# ---------------------------
-# Helpers
-# ---------------------------
 def derive_table_name(filepath: str) -> str:
     stem = Path(filepath).stem
     parts = re.split(r'[\W_]+', stem)
@@ -332,9 +329,6 @@ def scan_dataframe(input_file: str, sheet: Optional[str], table_name: str, df: p
                         "process": process_val
                     })
 
-# ---------------------------
-# Main
-# ---------------------------
 def main():
     parser = argparse.ArgumentParser(description="Scan input tables for FTU UBERON IDs.")
     parser.add_argument("--input", "-i", default=INPUT_FOLDER, help="Input folder to search (recursive).")

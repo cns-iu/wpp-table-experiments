@@ -4,9 +4,6 @@ import glob
 import os
 import re
 
-# --------------------
-# CONFIG
-# --------------------
 INPUT_FOLDER = "./data/WPP Input Tables/"
 OUT_FOLDER = "./unique_effectors/"
 os.makedirs(OUT_FOLDER, exist_ok=True)
@@ -48,9 +45,6 @@ ftu_ids = {
     "UBERON:0001832","UBERON:0001736"
 }
 
-# --------------------
-# Helpers
-# --------------------
 def normalize_spatial(val, effector_id=None):
     if pd.isna(val) or str(val).strip() == "":
         return SPATIAL_MAPPING.get("nan", "Unknown")
@@ -102,9 +96,6 @@ def safe_label_set(series):
             out.add(s)
     return out
 
-# --------------------
-# Processing a single file (aggregated across time)
-# --------------------
 def process_file_aggregate(path, header_row):
     df = pd.read_csv(path, header=header_row, encoding="utf-8-sig")
     df.columns = df.columns.str.strip()
@@ -137,9 +128,6 @@ def process_file_aggregate(path, header_row):
 
     return spatial_counts, total_union
 
-# --------------------
-# Walk files, write per-file aggregated CSV + combined summary CSV
-# --------------------
 files = sorted(glob.glob(os.path.join(INPUT_FOLDER, "**", "*.csv"), recursive=True))
 summary_rows = []
 

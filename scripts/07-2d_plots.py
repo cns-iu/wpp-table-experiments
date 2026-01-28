@@ -7,16 +7,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 
-# --------------------------
-# Paths (adjust if needed)
-# --------------------------
 input_folder = "./temporal_spatial_output/"
 output_folder = "./2d_plots/"
 os.makedirs(output_folder, exist_ok=True)
 
-# --------------------------
-# Configuration (orders + visuals)
-# --------------------------
 spatial_order = ["Organ", "AS", "FTU", "CT", "B"]
 time_order = [
     "<1 second", "1s - < 1min", "1min - < 1hr", "1hr - < 1day",
@@ -28,9 +22,6 @@ cmap_choice = "summer"
 figsize = (10, 6)
 dpi = 300
 
-# --------------------------
-# Helpers
-# --------------------------
 def process_count(x):
     """Return number of semicolon-separated IDs in a cell; treat empty/NaN as 0."""
     if pd.isna(x) or str(x).strip() == "":
@@ -50,9 +41,6 @@ def extract_organ_system_name(filename):
         return " ".join(parts[:2])
     return parts[0]
 
-# --------------------------
-# Read CSVs and build combined dataframe
-# --------------------------
 files = sorted(glob.glob(os.path.join(input_folder, "*.csv")))
 if not files:
     raise RuntimeError(f"No CSV files found in {input_folder}")
@@ -87,9 +75,7 @@ long_df = combined.melt(
 long_df["Spatial Scale"] = long_df["Spatial Scale"].str.replace("_count", "")
 long_df = long_df[long_df["Count"] > 0].copy()
 
-# --------------------------
 # Build organ system order (preserve file order)
-# --------------------------
 organ_system_order = []
 seen = set()
 for f in files:
@@ -101,9 +87,7 @@ for f in files:
 if not organ_system_order:
     organ_system_order = sorted(long_df["Organ System"].unique())
 
-# --------------------------
 # Encode categorical axes & filter invalid categories
-# --------------------------
 long_df["z"] = long_df["Organ System"].astype("category").cat.set_categories(organ_system_order).cat.codes
 long_df["x"] = long_df["Spatial Scale"].astype("category").cat.set_categories(spatial_order).cat.codes
 long_df["y"] = long_df["Time Range"].astype("category").cat.set_categories(time_order).cat.codes
@@ -117,9 +101,7 @@ y_map = {cat: i for i, cat in enumerate(y_categories)}
 
 organ_systems = [s for s in organ_system_order if s in long_df["Organ System"].unique()]
 
-# --------------------------
 # CALCULATE GLOBAL COLORBAR RANGE (same as 3D plot)
-# --------------------------
 all_counts = long_df["Count"].values.astype(float)
 global_vmin = max(1, all_counts.min())  # avoid 0
 global_vmax = all_counts.max()
@@ -128,9 +110,7 @@ global_vmin_adjusted = global_vmin + (global_vmax - global_vmin) * 0.01
 
 print(f"Global colorbar range: {global_vmin_adjusted:.2f} to {global_vmax:.2f}")
 
-# --------------------------
 # Plot settings
-# --------------------------
 make_heatmaps = False  
 make_bubbles = True     
 

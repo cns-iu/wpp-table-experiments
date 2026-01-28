@@ -27,9 +27,6 @@ TISSUE_ID_COLS = [
     "EffectorLocation/ID", "EffectorLocation ID", "EffectorLocationID", "effectorlocation_id", "effectorlocationid"
 ]
 
-# -----------------------
-# Helpers
-# -----------------------
 def find_all_columns(df, candidates):
     lowered = {c.lower(): c for c in df.columns}
     matches = []
@@ -89,9 +86,6 @@ def normalize_source_name(fname):
 
     return s
 
-# -----------------------
-# Main
-# -----------------------
 def collect_tissue_only_dedupe_by_id(input_folder, output_tissue_file):
     files = sorted(glob.glob(os.path.join(input_folder, "*.csv")))
     if not files:

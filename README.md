@@ -4,24 +4,31 @@ Descriptions according to the script number
 
 ## Execution
 
-### Individual Script Run Example (execute all the 3 commands)
+All the google sheet links for WPP Tables are saved in this following folder which are necessary for scripts to run as they are the main inputs. If there are any changes to it or if new tables are added we need to add them to this csv so that the scripts can catch it.
+> sheets_to_fetch.csv
+
+All the output logs are also saved in output_logs folder
+
+### A) Individual Script Run Example (execute all the 3 commands)
 
 > SCRIPT_ROOT="$(pwd)"
 > WEEK="$(ls -1d "${SCRIPT_ROOT}/output_iterative/"* | tail -n1)"
 
-> #### pick a python (venv preferred, else system)
+> ### pick a python (venv preferred, else system)
 > if [ -x "${SCRIPT_ROOT}/.venv/bin/python" ]; then PY="${SCRIPT_ROOT}/.venv/bin/python"; elif [ -x "${SCRIPT_ROOT}/.venv/Scripts/python" ]; then PY="${SCRIPT_ROOT}/.venv/Scripts/python"; else PY="$(command -v python3 || command -v python)"; fi
 
-> #### run (use absolute script path, run with CWD=WEEK)
+> ### run (use absolute script path, run with CWD=WEEK)
 > (cd "$WEEK" && PYTHONIOENCODING=utf-8 "$PY" "$SCRIPT_ROOT/scripts/script file name goes here.py") 2>&1 | tee output_logs/manual_06_$(date +%Y%m%d_%H%M%S).log
 
-### Run All the Scripts
+### B) Run All the Scripts - (RECOMMENDED)
 
 IN the bash terminal execute these commands - 
 
 > chmod +x run.sh
 
 > ./run.sh
+
+This will automatically takke care of setting up a venv, you don't need to set it up seperately.
 
 ## 01 - All ids and types from asctb and HRA kg are extracted in this table
 > Output - data/all_asctb_ids_with_types.csv

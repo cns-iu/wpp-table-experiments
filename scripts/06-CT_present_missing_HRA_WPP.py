@@ -6,9 +6,6 @@ import sys
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
-# -----------------------
-# USER CONFIG
-# -----------------------
 cl_ids_file = "./analysis/all_CT_statistics/all_CL_ids_in_WPP_by_id.csv"  # your extracted CL file
 astcb_master_file = "./data/all_asctb_ids_and_types.csv"        # master file
 output_missing = "./analysis/all_CT_statistics/cl_ids_missing_in_astcb.csv"
